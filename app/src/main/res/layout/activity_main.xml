@@ -16,9 +16,40 @@
         app:layout_constraintBottom_toBottomOf="parent"
         tools:layout_editor_absoluteX="31dp" />
 
-    <FrameLayout
-        android:id="@+id/content"
+    <fragment
+        android:id="@+id/login"
+        android:name="com.example.atlabu.Login"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="31dp" />
+
+    <fragment
+        android:id="@+id/challange"
+        android:name="com.example.atlabu.Challange_me"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="31dp" />
+
+    <fragment
+        android:id="@+id/more"
+        android:name="com.example.atlabu.More"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="31dp" />
+
+    <fragment
+        android:id="@+id/profile"
+        android:name="com.example.atlabu.profile"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="31dp" />
 
 </android.support.constraint.ConstraintLayout>
