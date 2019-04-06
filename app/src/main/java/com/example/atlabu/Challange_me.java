@@ -8,24 +8,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.support.design.widget.BottomNavigationView;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.view.MenuItem
 import android.widget.RelativeLayout;
 import android.widget.Button;
 import java.util.Locale;
 
 public class Challange_me extends Fragment {
 
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.activity_challange_me, container, false);
-    }
-
-    private static final long CHALLENGE_TIME_LENGTH = 60000;
+    private static final long CHALLENGE_TIME_LENGTH = 6000;
     private static final long WARNING_TIME_LENGTH = 6000;
     private RelativeLayout FirstRun;
     private RelativeLayout SecondRun;
@@ -35,49 +24,39 @@ public class Challange_me extends Fragment {
     private CountDownTimer Running2;
     private TextView mTextMessage;
     private Button buttonHolder;
-    private long mTimeLeftInMillis = CHALLENGE_TIME_LENGTH;
-    private long mTimeLeftForWarning = WARNING_TIME_LENGTH;
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.navigation_home:
-                    //mTextMessage.setText(R.string.title_home);
-                    startActivity(new Intent(Challange_me.this, More.class));
-                    return true;
-                case R.id.navigation_dashboard:
-                    //mTextMessage.setText(R.string.title_dashboard);
-                    startActivity(new Intent(Challange_me.this, Challange_me.class));
-                    return true;
-                case R.id.navigation_notifications:
-                    //mTextMessage.setText(R.string.title_notifications);
-                    startActivity(new Intent(Challange_me.this, profile.class));
-                    return true;
-            }
-            return false;
-        }
-    };
+    private long mTimeLeftInMillis;
+    private long mTimeLeftForWarning;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_challange_me);
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.activity_challange_me, container, false);
+    }
 
-        mTextMessage = (TextView) findViewById(R.id.message);
-        mTextViewCountDownPRIMARY = findViewById(R.id.textViewCountDown);
-        mTextViewCountDownWARNING = findViewById(R.id.WARNING_NUMBER);
-        buttonHolder = findViewById(R.id.cButton);
-        FirstRun = findViewById(R.id.SecondPanel);
-        SecondRun = findViewById(R.id.INITIALCOUNTDOWN);
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+    @Override
+    public void onResume() {
+        super.onResume();
+        clock();
+    }
 
+    public void clock() {
+
+        mTextMessage = (TextView) getView().findViewById(R.id.message);
+        mTextViewCountDownPRIMARY = getView().findViewById(R.id.textViewCountDown);
+        mTextViewCountDownWARNING = getView().findViewById(R.id.WARNING_NUMBER);
+        buttonHolder = getView().findViewById(R.id.cButton);
+        FirstRun = getView().findViewById(R.id.SecondPanel);
+        SecondRun = getView().findViewById(R.id.INITIALCOUNTDOWN);
+        mTimeLeftForWarning = WARNING_TIME_LENGTH;
+        mTimeLeftInMillis = CHALLENGE_TIME_LENGTH;
+
+        buttonHolder.setVisibility(View.VISIBLE);
         buttonHolder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Log.e(TAG, "onClick: ");
+                buttonHolder.setVisibility(View.INVISIBLE);
                 FirstRun.setVisibility(View.VISIBLE);
                 startTimer1();
                 //mTextViewCountDownPRIMARY.setVisibility(View.VISIBLE);
@@ -121,7 +100,10 @@ public class Challange_me extends Fragment {
 
             @Override
             public void onFinish() {
+                SecondRun.setVisibility(View.INVISIBLE);
+                clock();
                 cancel();
+
 
             }
         }.start();
