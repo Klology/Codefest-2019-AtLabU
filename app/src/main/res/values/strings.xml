@@ -19,4 +19,5 @@
     <string name="redeem1">Redeem: 5 points</string>
     <string name="redeem2">Redeem: 10 points</string>
     <string name="redeem3">Redeem: 15 points</string>
+    <string name="title_activity_shop_code">shop_code</string>
 </resources>
