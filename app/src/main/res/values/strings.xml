@@ -10,4 +10,14 @@
     <string name="article">article</string>
     <string name="testimonials">testimonials</string>
     <string name="shop_image">shop_image</string>
+    <string name="newspaper">newspaper</string>
+    <string name="score">Score</string>
+    <string name="score_">Score:</string>
+    <string name="_0">0</string>
+    <string name="title_activity_shop">Shop</string>
+    <string name="buy_code">Buy Code</string>
+    <string name="redeem1">Redeem: 5 points</string>
+    <string name="redeem2">Redeem: 10 points</string>
+    <string name="redeem3">Redeem: 15 points</string>
+    <string name="title_activity_shop_code">shop_code</string>
 </resources>
