@@ -9,14 +9,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-<<<<<<< HEAD
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.Toast;
-=======
 import android.widget.EditText;
 import android.widget.TextView;
->>>>>>> f4fd653231feeba9de21214cbda3732dbc044479
 
 public class MainActivity extends AppCompatActivity {
 
@@ -51,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
+
+
     private View.OnClickListener lListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -58,7 +57,6 @@ public class MainActivity extends AppCompatActivity {
             EditText edit = findViewById(R.id.userNameSub);
             TextView text = findViewById(R.id.userNameDis);
             text.setText(edit.getText());
-
         }
     };
 

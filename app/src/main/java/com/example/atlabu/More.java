@@ -20,4 +20,6 @@ public class More extends Fragment {
         return inflater.inflate(R.layout.activity_more, container, false);
     }
 
+
+
 }
