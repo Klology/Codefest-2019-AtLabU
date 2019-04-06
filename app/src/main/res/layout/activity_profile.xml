@@ -37,7 +37,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="13dp"
         android:src="@drawable/profile"
-        app:layout_constraintEnd_toStartOf="@+id/switch6"
+        app:layout_constraintEnd_toStartOf="@+id/Ws"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginLeft="16dp"
@@ -104,7 +104,7 @@
         android:text="What Exercises Can You Do?"
         app:layout_constraintBottom_toTopOf="@+id/PUs"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switch7"
+        app:layout_constraintTop_toBottomOf="@+id/SleepS"
         android:layout_marginLeft="13dp" />
 
     <TextView
@@ -153,21 +153,21 @@
         android:layout_marginRight="18dp" />
 
     <Switch
-        android:id="@+id/switch6"
+        android:id="@+id/Ws"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="42dp"
         android:layout_marginEnd="18dp"
         android:layout_marginBottom="14dp"
         android:text="Help Wih Water?"
-        app:layout_constraintBottom_toTopOf="@+id/switch7"
+        app:layout_constraintBottom_toTopOf="@+id/SleepS"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageButton"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginRight="18dp" />
 
     <Switch
-        android:id="@+id/switch7"
+        android:id="@+id/SleepS"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="1dp"
@@ -176,8 +176,8 @@
         android:text="Help With Sleep?"
         app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="@+id/editText7"
-        app:layout_constraintStart_toStartOf="@+id/switch6"
-        app:layout_constraintTop_toBottomOf="@+id/switch6" />
+        app:layout_constraintStart_toStartOf="@+id/Ws"
+        app:layout_constraintTop_toBottomOf="@+id/Ws" />
 
     <EditText
         android:id="@+id/editText6"
@@ -232,7 +232,7 @@
         android:layout_marginEnd="36dp"
         android:layout_marginRight="36dp"
         android:layout_marginBottom="19dp"
-        android:text="@string/UserName"
+        android:text="username"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/textView"
