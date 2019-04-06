@@ -40,4 +40,7 @@ public class Arrays {
     public void setUsername (String username){
         this.username = username;
     }
+    public void setPUs (Boolean PUs){
+   //     PUs =
+    }
 }

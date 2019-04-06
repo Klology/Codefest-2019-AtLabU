@@ -10,6 +10,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.Switch;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -74,6 +77,25 @@ public class MainActivity extends AppCompatActivity {
 
         lButton = findViewById(R.id.LButton);
         lButton.setOnClickListener(lListener);
+
+
+
+        Switch mySwitch = findViewById(R.id.PUs);
+        mySwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                //changeContent(getView().findViewById(R.id.challange));
+                //Toast toast = Toast.makeText(this, "This is a message displayed in a Toast");
+                //toast.show();
+                // MainActivity.ChangeV();
+                String mess = "message";
+                Toast toast = Toast.makeText(getApplicationContext(), "This is a message displayed in a Toast", Toast.LENGTH_SHORT); toast.show();
+                //Toast.makeText(this, R.string.app_name, Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+    public void changeV(){
+
+        changeContent(findViewById(R.id.more));
     }
 
 }
