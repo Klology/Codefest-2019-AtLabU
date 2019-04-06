@@ -14,8 +14,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
-        android:text="@string/title_home"
-        android:visibility="invisible"
+        android:text="@string/title_activity_more"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -33,7 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
-        android:layout_marginTop="107dp"
+        android:layout_marginTop="76dp"
         android:adjustViewBounds="false"
         android:contentDescription="@string/shop_image"
         android:cropToPadding="false"
@@ -47,7 +46,7 @@
         android:id="@+id/articleButton"
         android:layout_width="356dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="27dp"
+        android:layout_marginTop="24dp"
         android:adjustViewBounds="false"
         android:contentDescription="@string/newspaper"
         android:cropToPadding="false"
@@ -64,7 +63,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="27dp"
         android:layout_marginLeft="27dp"
-        android:layout_marginTop="31dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="27dp"
         android:layout_marginRight="27dp"
         android:adjustViewBounds="false"
@@ -81,9 +80,9 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:layout_marginEnd="98dp"
-        android:layout_marginRight="98dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="192dp"
+        android:layout_marginRight="192dp"
         android:text="@string/score_"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -91,15 +90,14 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="11dp"
-        android:layout_marginLeft="11dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="19dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:text="@string/_0"
         android:textSize="30sp"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView2"
+        app:layout_constraintStart_toEndOf="@+id/textView2" />
 
 
 </android.support.constraint.ConstraintLayout>
