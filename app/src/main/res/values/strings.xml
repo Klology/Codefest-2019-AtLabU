@@ -7,4 +7,5 @@
     <string name="title_activity_profile">profile</string>
     <string name="title_activity_more">More</string>
     <string name="title_activity_feedback">Feedback</string>
+    <string name="UserName">User</string>
 </resources>
