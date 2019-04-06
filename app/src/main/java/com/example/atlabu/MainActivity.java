@@ -1,5 +1,6 @@
 package com.example.atlabu;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -20,6 +21,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     private Button lButton;
+    private Button shopButton;
     private View curContent;
     private boolean SitUp=false, PushUp=false, Squat=false, Planking=false;
     private boolean Water=false, Sleep=false;
