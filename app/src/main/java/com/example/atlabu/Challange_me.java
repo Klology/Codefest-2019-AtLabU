@@ -1,23 +1,30 @@
 package com.example.atlabu;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.annotation.NonNull;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.MenuItem;
-import android.view.View;
+import android.view.MenuItem
 import android.widget.RelativeLayout;
 import android.widget.Button;
-import android.widget.TextView;
-
-
 import java.util.Locale;
 
+public class Challange_me extends Fragment {
 
-public class Challange_me extends AppCompatActivity {
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.activity_challange_me, container, false);
+    }
+
     private static final long CHALLENGE_TIME_LENGTH = 60000;
     private static final long WARNING_TIME_LENGTH = 6000;
     private RelativeLayout FirstRun;
