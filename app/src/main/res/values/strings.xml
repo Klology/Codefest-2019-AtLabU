@@ -11,4 +11,7 @@
     <string name="testimonials">testimonials</string>
     <string name="shop_image">shop_image</string>
     <string name="newspaper">newspaper</string>
+    <string name="score">Score</string>
+    <string name="score_">Score:</string>
+    <string name="_0">0</string>
 </resources>
