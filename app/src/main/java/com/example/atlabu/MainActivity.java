@@ -34,6 +34,9 @@ public class MainActivity extends AppCompatActivity {
                     mTextMessage.setText("Profile");
                     startActivity(new Intent(MainActivity.this, profile.class));
                     return true;
+                    //startActivity(new Intent(MainActivity.this, profile.class));
+                //startActivity(new Intent(MainActivity.this, Challange_me.class));
+                //startActivity(new Intent(MainActivity.this, More.class));
             }
             return false;
         }
