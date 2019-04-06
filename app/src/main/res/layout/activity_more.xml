@@ -88,7 +88,7 @@
         app:layout_constraintVertical_bias="1.0" /> -->
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/shopButton"
         android:layout_width="356dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
@@ -123,7 +123,7 @@
         android:cropToPadding="false"
         android:visibility="visible"
         app:backgroundTint="@android:color/holo_green_light"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton"
+        app:layout_constraintBottom_toTopOf="@+id/shopButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -166,7 +166,7 @@
         android:layout_marginBottom="10dp"
         android:text="@string/score_"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton"
+        app:layout_constraintBottom_toTopOf="@+id/shopButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/message"
         app:layout_constraintTop_toTopOf="parent" />
@@ -183,7 +183,7 @@
         android:layout_marginBottom="14dp"
         android:text="@string/_0"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton"
+        app:layout_constraintBottom_toTopOf="@+id/shopButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView2"
         app:layout_constraintTop_toTopOf="parent" />

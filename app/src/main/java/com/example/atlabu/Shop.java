@@ -1,19 +1,17 @@
 package com.example.atlabu;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Button;
 
-public class More extends AppCompatActivity {
+public class Shop extends AppCompatActivity {
 
     private TextView mTextMessage;
-    private ImageButton shopButton;
+    private Button coupon_button;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -21,19 +19,14 @@ public class More extends AppCompatActivity {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
-                //startActivity(new Intent(MainActivity.this, profile.class));
-                //startActivity(new Intent(MainActivity.this, Challange_me.class));
-                //startActivity(new Intent(MainActivity.this, More.class));
                 case R.id.navigation_home:
-                    //mTextMessage.setText(R.string.title_home);
-                    startActivity(new Intent(More.this, More.class));
+                    mTextMessage.setText(R.string.title_home);
                     return true;
                 case R.id.navigation_dashboard:
-                    //mTextMessage.setText(R.string.title_dashboard);
-                    startActivity(new Intent(More.this, Challange_me.class));
+                    mTextMessage.setText(R.string.title_dashboard);
                     return true;
                 case R.id.navigation_notifications:
-                    startActivity(new Intent(More.this, profile.class));
+                    mTextMessage.setText(R.string.title_notifications);
                     return true;
             }
             return false;
@@ -43,16 +36,9 @@ public class More extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_more);
 
 
-        shopButton = findViewById(R.id.shopButton);
-        shopButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                startActivity(new Intent(More.this, Shop.class));
-            }
-        });
+        setContentView(R.layout.activity_shop);
 
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
