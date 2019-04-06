@@ -4,10 +4,14 @@ import java.util.ArrayList;
 
 public class Arrays {
 
+
+    public String username;
+
     /**
      * Exercise menu item array
      * @return exerciseList
      */
+
     public static ArrayList<String> getExercise(){
     ArrayList<String> exerciseList = new ArrayList<>();
     exerciseList.add("Sit-Ups- Perform as many push-ups as you can.");
@@ -29,5 +33,11 @@ public class Arrays {
         healthList.add("Drink a glass of water.");
         healthList.add("Go to bed on time.");
         return healthList;
+    }
+
+
+    //mutator to accept single string username
+    public void setUsername (String username){
+        this.username = username;
     }
 }
