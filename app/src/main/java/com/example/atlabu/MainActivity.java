@@ -43,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
+
+
     private View.OnClickListener lListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -50,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
             EditText edit = findViewById(R.id.userNameSub);
             TextView text = findViewById(R.id.userNameDis);
             text.setText(edit.getText());
-
         }
     };
 

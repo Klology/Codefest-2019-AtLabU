@@ -56,10 +56,10 @@
 
     <RelativeLayout
         android:id="@+id/SecondPanel"
-        android:layout_width="395dp"
+        android:layout_width="397dp"
         android:layout_height="432dp"
         android:visibility="invisible"
-        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteX="6dp"
         tools:layout_editor_absoluteY="46dp">
 
         <TextView

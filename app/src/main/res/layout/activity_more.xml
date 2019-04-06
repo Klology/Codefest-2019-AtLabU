@@ -27,63 +27,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-
-    <!-- <Button
-        android:id="@+id/button"
-        android:layout_width="0dp"
-        android:layout_height="140dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginTop="500dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginRight="25dp"
-        android:layout_marginBottom="350dp"
-        android:text="@string/shop"
-        app:layout_constraintBottom_toTopOf="@+id/navigation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/message"
-        app:layout_constraintVertical_bias="1.0" /> -->
-
-    <!--
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="0dp"
-        android:layout_height="140dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginTop="500dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginRight="25dp"
-        android:layout_marginBottom="200dp"
-        android:text="@string/article"
-        app:layout_constraintBottom_toTopOf="@+id/navigation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/message"
-        app:layout_constraintVertical_bias="1.0" /> -->
-
-    <!--
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="0dp"
-        android:layout_height="140dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginTop="500dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginRight="25dp"
-        android:layout_marginBottom="50dp"
-        android:text="@string/testimonials"
-        app:layout_constraintBottom_toTopOf="@+id/navigation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/message"
-        app:layout_constraintVertical_bias="1.0" /> -->
-
     <ImageButton
         android:id="@+id/shopButton"
         android:layout_width="356dp"
@@ -99,14 +42,14 @@
         android:cropToPadding="false"
         android:visibility="visible"
         app:backgroundTint = "@android:color/holo_blue_bright"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton2"
+        app:layout_constraintBottom_toTopOf="@+id/articles"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/message"
         app:srcCompat="@mipmap/ic_shop_bag" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/articles"
         android:layout_width="356dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
@@ -129,12 +72,12 @@
         app:srcCompat="@mipmap/ic_newspaper" />
 
     <ImageButton
-        android:id="@+id/imageButton3"
+        android:id="@+id/testimonials"
         android:layout_width="356dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginLeft="28dp"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="320dp"
         android:layout_marginEnd="25dp"
         android:layout_marginRight="25dp"
         android:layout_marginBottom="75dp"
