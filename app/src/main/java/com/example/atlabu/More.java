@@ -1,5 +1,6 @@
 package com.example.atlabu;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -17,14 +18,19 @@ public class More extends AppCompatActivity {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
+                //startActivity(new Intent(MainActivity.this, profile.class));
+                //startActivity(new Intent(MainActivity.this, Challange_me.class));
+                //startActivity(new Intent(MainActivity.this, More.class));
                 case R.id.navigation_home:
                     mTextMessage.setText(R.string.title_home);
+                    startActivity(new Intent(More.this, More.class));
                     return true;
                 case R.id.navigation_dashboard:
                     mTextMessage.setText(R.string.title_dashboard);
+                    startActivity(new Intent(More.this, Challange_me.class));
                     return true;
                 case R.id.navigation_notifications:
-                    mTextMessage.setText(R.string.title_notifications);
+                    startActivity(new Intent(More.this, profile.class));
                     return true;
             }
             return false;
