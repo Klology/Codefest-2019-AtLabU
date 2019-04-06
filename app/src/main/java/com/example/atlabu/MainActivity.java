@@ -58,6 +58,14 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
+    private View.OnClickListener shopListener = new View.OnClickListener(){
+        @Override
+        public void onClick(View v) {
+
+        }
+
+    };
+
     private void changeContent(View view){
         curContent.setVisibility(View.INVISIBLE);
         view.setVisibility(View.VISIBLE);
