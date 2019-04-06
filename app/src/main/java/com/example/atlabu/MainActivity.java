@@ -84,9 +84,6 @@ public class MainActivity extends AppCompatActivity {
 
         lButton = findViewById(R.id.LButton);
         lButton.setOnClickListener(lListener);
-
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
         Switch PushUp = findViewById(R.id.PUs);
         PushUp.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -151,7 +148,6 @@ public class MainActivity extends AppCompatActivity {
                 }            }
         });
     }
-    ////////////////////////////////////////////////////////////////////////////////////////////////
     public void changeV(){
 
         changeContent(findViewById(R.id.more));
