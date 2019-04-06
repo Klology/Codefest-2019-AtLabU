@@ -9,17 +9,22 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.Toast;
+
 import android.widget.EditText;
 import android.widget.TextView;
+
 
 public class MainActivity extends AppCompatActivity {
 
     private Button lButton;
     private Button shopButton;
     private View curContent;
+    private boolean SitUp=false, PushUp=false, Squat=false, Planking=false;
+    private boolean Water=false, Sleep=false;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -48,8 +53,6 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
-
-
     private View.OnClickListener lListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -57,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
             EditText edit = findViewById(R.id.userNameSub);
             TextView text = findViewById(R.id.userNameDis);
             text.setText(edit.getText());
+
         }
     };
 
@@ -85,8 +89,8 @@ public class MainActivity extends AppCompatActivity {
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-        Switch mySwitch = findViewById(R.id.PUs);
-        mySwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        Switch PushUp = findViewById(R.id.PUs);
+        PushUp.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked){
                     Toast toast = Toast.makeText(getApplicationContext(), "Push-Ups ON!", Toast.LENGTH_SHORT); toast.show();
@@ -98,34 +102,54 @@ public class MainActivity extends AppCompatActivity {
                 //Toast toast = Toast.makeText(getApplicationContext(), "This is a message displayed in a Toast", Toast.LENGTH_SHORT); toast.show();
             }
         });
-        Switch mySwitch2 = findViewById(R.id.PUs);
-        mySwitch2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        Switch SitUp = findViewById(R.id.SUs);
+        SitUp.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked){
-                    Toast toast = Toast.makeText(getApplicationContext(), "Push-Ups ON!", Toast.LENGTH_SHORT); toast.show();
+                    Toast toast = Toast.makeText(getApplicationContext(), "Sit-Ups ON!", Toast.LENGTH_SHORT); toast.show();
 
                 }else{
-                    Toast toast = Toast.makeText(getApplicationContext(), "Push-ups OFF", Toast.LENGTH_SHORT); toast.show();
+                    Toast toast = Toast.makeText(getApplicationContext(), "Sit-ups OFF", Toast.LENGTH_SHORT); toast.show();
                 }            }
         });
-        Switch mySwitch3 = findViewById(R.id.PUs);
-        mySwitch3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        Switch Squ = findViewById(R.id.Ss);
+        Squ.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked){
-                    Toast toast = Toast.makeText(getApplicationContext(), "Push-Ups ON!", Toast.LENGTH_SHORT); toast.show();
+                    Toast toast = Toast.makeText(getApplicationContext(), "Squats ON!", Toast.LENGTH_SHORT); toast.show();
 
                 }else{
-                    Toast toast = Toast.makeText(getApplicationContext(), "Push-ups OFF", Toast.LENGTH_SHORT); toast.show();
+                    Toast toast = Toast.makeText(getApplicationContext(), "Squats OFF", Toast.LENGTH_SHORT); toast.show();
                 }            }
         });
-        Switch mySwitch4 = findViewById(R.id.PUs);
-        mySwitch4.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        Switch plank = findViewById(R.id.Ps);
+        plank.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked){
-                    Toast toast = Toast.makeText(getApplicationContext(), "Push-Ups ON!", Toast.LENGTH_SHORT); toast.show();
+                    Toast toast = Toast.makeText(getApplicationContext(), "Plank ON!", Toast.LENGTH_SHORT); toast.show();
 
                 }else{
-                    Toast toast = Toast.makeText(getApplicationContext(), "Push-ups OFF", Toast.LENGTH_SHORT); toast.show();
+                    Toast toast = Toast.makeText(getApplicationContext(), "Plank OFF", Toast.LENGTH_SHORT); toast.show();
+                }            }
+        });
+        Switch Water = findViewById(R.id.Ws);
+        Water.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    Toast toast = Toast.makeText(getApplicationContext(), "Water ON!", Toast.LENGTH_SHORT); toast.show();
+
+                }else{
+                    Toast toast = Toast.makeText(getApplicationContext(), "Water OFF", Toast.LENGTH_SHORT); toast.show();
+                }            }
+        });
+        Switch Sleep = findViewById(R.id.SleepS);
+        Sleep.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    Toast toast = Toast.makeText(getApplicationContext(), "Sleep ON!", Toast.LENGTH_SHORT); toast.show();
+
+                }else{
+                    Toast toast = Toast.makeText(getApplicationContext(), "Sleep OFF", Toast.LENGTH_SHORT); toast.show();
                 }            }
         });
     }
