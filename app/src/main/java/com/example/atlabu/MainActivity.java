@@ -79,20 +79,52 @@ public class MainActivity extends AppCompatActivity {
         lButton.setOnClickListener(lListener);
 
 
-
+////////////////////////////////////////////////////////////////////////////////////////////////////
         Switch mySwitch = findViewById(R.id.PUs);
         mySwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                //changeContent(getView().findViewById(R.id.challange));
-                //Toast toast = Toast.makeText(this, "This is a message displayed in a Toast");
-                //toast.show();
-                // MainActivity.ChangeV();
-                String mess = "message";
-                Toast toast = Toast.makeText(getApplicationContext(), "This is a message displayed in a Toast", Toast.LENGTH_SHORT); toast.show();
-                //Toast.makeText(this, R.string.app_name, Toast.LENGTH_SHORT).show();
+                if(isChecked){
+                    Toast toast = Toast.makeText(getApplicationContext(), "Push-Ups ON!", Toast.LENGTH_SHORT); toast.show();
+
+                }else{
+                    Toast toast = Toast.makeText(getApplicationContext(), "Push-ups OFF", Toast.LENGTH_SHORT); toast.show();
+                }
+
+                //Toast toast = Toast.makeText(getApplicationContext(), "This is a message displayed in a Toast", Toast.LENGTH_SHORT); toast.show();
             }
         });
+        Switch mySwitch2 = findViewById(R.id.PUs);
+        mySwitch2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    Toast toast = Toast.makeText(getApplicationContext(), "Push-Ups ON!", Toast.LENGTH_SHORT); toast.show();
+
+                }else{
+                    Toast toast = Toast.makeText(getApplicationContext(), "Push-ups OFF", Toast.LENGTH_SHORT); toast.show();
+                }            }
+        });
+        Switch mySwitch3 = findViewById(R.id.PUs);
+        mySwitch3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    Toast toast = Toast.makeText(getApplicationContext(), "Push-Ups ON!", Toast.LENGTH_SHORT); toast.show();
+
+                }else{
+                    Toast toast = Toast.makeText(getApplicationContext(), "Push-ups OFF", Toast.LENGTH_SHORT); toast.show();
+                }            }
+        });
+        Switch mySwitch4 = findViewById(R.id.PUs);
+        mySwitch4.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    Toast toast = Toast.makeText(getApplicationContext(), "Push-Ups ON!", Toast.LENGTH_SHORT); toast.show();
+
+                }else{
+                    Toast toast = Toast.makeText(getApplicationContext(), "Push-ups OFF", Toast.LENGTH_SHORT); toast.show();
+                }            }
+        });
     }
+    ////////////////////////////////////////////////////////////////////////////////////////////////
     public void changeV(){
 
         changeContent(findViewById(R.id.more));
