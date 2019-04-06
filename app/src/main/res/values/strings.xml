@@ -7,6 +7,7 @@
     <string name="title_activity_profile">profile</string>
     <string name="title_activity_more">More</string>
     <string name="title_activity_feedback">Feedback</string>
+    <string name="UserName">User</string>
     <string name="article">article</string>
     <string name="testimonials">testimonials</string>
     <string name="shop_image">shop_image</string>
@@ -20,6 +21,5 @@
     <string name="redeem2">Redeem: 10 points</string>
     <string name="redeem3">Redeem: 15 points</string>
     <string name="title_activity_shop_code">shop_code</string>
-    <string name="title_activity_code1">Code1</string>
-    <string name="username">UserName</string>
+
 </resources>
