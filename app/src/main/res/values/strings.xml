@@ -7,4 +7,7 @@
     <string name="title_activity_profile">profile</string>
     <string name="title_activity_more">More</string>
     <string name="title_activity_feedback">Feedback</string>
+    <string name="article">article</string>
+    <string name="testimonials">testimonials</string>
+    <string name="shop_image">shop_image</string>
 </resources>
