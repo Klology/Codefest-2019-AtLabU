@@ -39,7 +39,9 @@
         android:src="@drawable/profile"
         app:layout_constraintEnd_toStartOf="@+id/switch6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="13dp" />
 
     <Switch
         android:id="@+id/SUs"
@@ -49,7 +51,8 @@
         android:text="Sit-Ups?"
         app:layout_constraintBaseline_toBaselineOf="@+id/PUs"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/PUs" />
+        app:layout_constraintStart_toEndOf="@+id/PUs"
+        android:layout_marginRight="80dp" />
 
     <Switch
         android:id="@+id/Ss"
@@ -62,7 +65,9 @@
         app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toStartOf="@+id/Ps"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/PUs" />
+        app:layout_constraintTop_toBottomOf="@+id/PUs"
+        android:layout_marginLeft="13dp"
+        android:layout_marginRight="2dp" />
 
     <Switch
         android:id="@+id/PUs"
@@ -75,7 +80,9 @@
         app:layout_constraintBottom_toTopOf="@+id/Ss"
         app:layout_constraintEnd_toStartOf="@+id/SUs"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        android:layout_marginLeft="13dp"
+        android:layout_marginRight="4dp" />
 
     <Switch
         android:id="@+id/Ps"
@@ -85,7 +92,8 @@
         android:text="Planks?"
         app:layout_constraintBaseline_toBaselineOf="@+id/Ss"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/Ss" />
+        app:layout_constraintStart_toEndOf="@+id/Ss"
+        android:layout_marginRight="80dp" />
 
     <TextView
         android:id="@+id/textView"
@@ -96,7 +104,8 @@
         android:text="What Exercises Can You Do?"
         app:layout_constraintBottom_toTopOf="@+id/PUs"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switch7" />
+        app:layout_constraintTop_toBottomOf="@+id/switch7"
+        android:layout_marginLeft="13dp" />
 
     <TextView
         android:id="@+id/textView2"
@@ -107,7 +116,8 @@
         android:text="What Level of Knowlage do you have?"
         app:layout_constraintBottom_toTopOf="@+id/editText6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Ss" />
+        app:layout_constraintTop_toBottomOf="@+id/Ss"
+        android:layout_marginLeft="13dp" />
 
     <TextView
         android:id="@+id/textView3"
@@ -121,7 +131,9 @@
         app:layout_constraintBottom_toBottomOf="@+id/editText7"
         app:layout_constraintEnd_toStartOf="@+id/editText6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Ss" />
+        app:layout_constraintTop_toBottomOf="@+id/Ss"
+        android:layout_marginLeft="13dp"
+        android:layout_marginRight="15dp" />
 
     <TextView
         android:id="@+id/textView4"
@@ -136,7 +148,9 @@
         app:layout_constraintEnd_toStartOf="@+id/editText7"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="18dp" />
 
     <Switch
         android:id="@+id/switch6"
@@ -149,7 +163,8 @@
         app:layout_constraintBottom_toTopOf="@+id/switch7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageButton"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginRight="18dp" />
 
     <Switch
         android:id="@+id/switch7"
@@ -175,7 +190,8 @@
         app:layout_constraintBottom_toTopOf="@+id/editText7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView3"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        android:layout_marginRight="17dp" />
 
     <EditText
         android:id="@+id/editText7"
@@ -188,7 +204,8 @@
         app:layout_constraintBottom_toTopOf="@+id/SButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/editText6" />
+        app:layout_constraintTop_toBottomOf="@+id/editText6"
+        android:layout_marginRight="16dp" />
 
     <EditText
         android:id="@+id/editText8"
@@ -202,6 +219,25 @@
         android:inputType="number"
         app:layout_constraintBottom_toTopOf="@+id/space"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginRight="12dp" />
+
+    <TextView
+        android:id="@+id/userNameDis"
+        android:layout_width="140dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginRight="36dp"
+        android:layout_marginBottom="19dp"
+        android:text="@string/UserName"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toStartOf="@+id/editText8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton" />
 
 </android.support.constraint.ConstraintLayout>

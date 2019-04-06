@@ -1,25 +1,26 @@
 package com.example.atlabu;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+<<<<<<< HEAD
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.Toast;
+=======
+import android.widget.EditText;
+import android.widget.TextView;
+>>>>>>> f4fd653231feeba9de21214cbda3732dbc044479
 
 public class MainActivity extends AppCompatActivity {
 
     private Button lButton;
     private View curContent;
-
-
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -51,7 +52,11 @@ public class MainActivity extends AppCompatActivity {
     private View.OnClickListener lListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            changeContent(findViewById(R.id.challange));
+            findViewById(R.id.navigation_notifications).callOnClick();
+            EditText edit = findViewById(R.id.userNameSub);
+            TextView text = findViewById(R.id.userNameDis);
+            text.setText(edit.getText());
+
         }
     };
 
