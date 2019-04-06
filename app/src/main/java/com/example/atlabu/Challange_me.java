@@ -68,6 +68,7 @@ public class Challange_me extends Fragment {
     }
 
 
+
     private void startTimer1() {
 
         Running1  = new CountDownTimer (mTimeLeftForWarning, 1000) {
