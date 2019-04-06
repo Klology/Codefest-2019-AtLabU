@@ -22,11 +22,11 @@ public class More extends AppCompatActivity {
                 //startActivity(new Intent(MainActivity.this, Challange_me.class));
                 //startActivity(new Intent(MainActivity.this, More.class));
                 case R.id.navigation_home:
-                    mTextMessage.setText(R.string.title_home);
+                    //mTextMessage.setText(R.string.title_home);
                     startActivity(new Intent(More.this, More.class));
                     return true;
                 case R.id.navigation_dashboard:
-                    mTextMessage.setText(R.string.title_dashboard);
+                    //mTextMessage.setText(R.string.title_dashboard);
                     startActivity(new Intent(More.this, Challange_me.class));
                     return true;
                 case R.id.navigation_notifications:
