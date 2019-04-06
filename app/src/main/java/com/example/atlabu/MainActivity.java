@@ -8,14 +8,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-<<<<<<< HEAD
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.Toast;
-=======
 import android.widget.EditText;
 import android.widget.TextView;
->>>>>>> f4fd653231feeba9de21214cbda3732dbc044479
 
 public class MainActivity extends AppCompatActivity {
 
