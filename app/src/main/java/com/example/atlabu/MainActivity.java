@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
@@ -25,9 +26,11 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
+    private FragmentManager fm = getSupportFragmentManager();
+    private Challange_me challange_me;
     private Button lButton;
     private ImageButton shopButton, articleButton, testimonialButton;
-    private View curContent;
+    private View curContent, navBar;
     private boolean SitingUp=false, PushingUp=false, Squating=false, Planking=false;
     private boolean Watering=false, Sleeping=false;
 
@@ -56,6 +59,13 @@ public class MainActivity extends AppCompatActivity {
                     return true;
             }
             return false;
+        }
+    };
+
+    private View.OnClickListener cListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            challange_me.clock(navBar);
         }
     };
 
@@ -101,6 +111,9 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.profile).setVisibility(View.INVISIBLE);
         findViewById(R.id.login).setVisibility(View.VISIBLE);
         curContent = findViewById(R.id.login);
+        challange_me = (Challange_me) fm.findFragmentById(R.id.challange);
+        navBar = findViewById(R.id.navBar);
+
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
@@ -111,6 +124,7 @@ public class MainActivity extends AppCompatActivity {
         shopButton = makeMoreButton(findViewById(R.id.shop), (ImageButton) findViewById(R.id.shopButton));
         articleButton = makeMoreButton(findViewById(R.id.article), (ImageButton) findViewById(R.id.articleButton));
         testimonialButton = makeMoreButton(findViewById(R.id.testimonial), (ImageButton) findViewById(R.id.testimonialButton));
+        findViewById(R.id.cButton).setOnClickListener(cListener);
 
 
 
