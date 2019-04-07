@@ -30,6 +30,7 @@ public class Challange_me extends Fragment {
     private CountDownTimer Running2;
     private TextView mTextMessage;
     private Button buttonHolder;
+    private View navBar;
     private long mTimeLeftInMillis;
     private long mTimeLeftForWarning;
 
@@ -46,14 +47,8 @@ public class Challange_me extends Fragment {
         return inflater.inflate(R.layout.activity_challange_me, container, false);
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        clock();
-    }
-
-    public void clock() {
-
+    public void clock(View navBar) {
+        this.navBar = navBar;
         mTextMessage = (TextView) getView().findViewById(R.id.message);
         mTextViewCountDownPRIMARY = getView().findViewById(R.id.textViewCountDown);
         mTextViewCountDownWARNING = getView().findViewById(R.id.WARNING_NUMBER);
@@ -64,21 +59,10 @@ public class Challange_me extends Fragment {
         mPostQuesMAT = getView().findViewById(R.id.MAT_ANSWER);
         mTimeLeftForWarning = WARNING_TIME_LENGTH;
         mTimeLeftInMillis = CHALLENGE_TIME_LENGTH;
-
-        buttonHolder.setVisibility(View.VISIBLE);
-        buttonHolder.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Log.e(TAG, "onClick: ");
-                buttonHolder.setVisibility(View.INVISIBLE);
-                FirstRun.setVisibility(View.VISIBLE);
-                startTimer1();
-                //mTextViewCountDownPRIMARY.setVisibility(View.VISIBLE);
-                //startTimer2();
-
-            }
-
-        });
+        buttonHolder.setVisibility(View.INVISIBLE);
+        FirstRun.setVisibility(View.VISIBLE);
+        navBar.setVisibility(View.INVISIBLE);
+        startTimer1();
     }
 
 
@@ -138,7 +122,7 @@ public class Challange_me extends Fragment {
         Running2  = new CountDownTimer (mTimeLeftInMillis, 1000){
             @Override
             public void onTick(long millisUntilFinished){
-                mTimeLeftInMillis =millisUntilFinished;
+                mTimeLeftInMillis = millisUntilFinished;
                 updateCountDownText();
 
             }
@@ -146,7 +130,8 @@ public class Challange_me extends Fragment {
             @Override
             public void onFinish() {
                 SecondRun.setVisibility(View.INVISIBLE);
-                clock();
+                buttonHolder.setVisibility(View.VISIBLE);
+                navBar.setVisibility(View.VISIBLE);
                 cancel();
                 int isMath = 1;
                 if(isMath ==0) {
