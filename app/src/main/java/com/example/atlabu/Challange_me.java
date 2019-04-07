@@ -64,7 +64,7 @@ public class Challange_me extends Fragment {
         brain = test.getMs() || test.getRs();
         health = test.getSLEs() || test.getWs();
         if(!(brain || health || exercise)) {
-            Toast toast = Toast.makeText(getContext(),"Profile has no challenge prerences saved!", Toast.LENGTH_SHORT);
+            Toast toast = Toast.makeText(getContext(),"Profile has no challenge preferences saved!", Toast.LENGTH_SHORT);
             toast.show();
             return;
         }
