@@ -111,6 +111,7 @@
             android:textColor="@android:color/holo_red_dark"
             android:textSize="20sp"
             android:textStyle="bold"
+            android:textAlignment="center"
             android:visibility="visible" />
 
     </RelativeLayout>
