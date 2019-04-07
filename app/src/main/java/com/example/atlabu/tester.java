@@ -3,8 +3,6 @@ package com.example.atlabu;
 class tester {
     private static final tester ourInstance = new tester();
     private boolean SUs=false, PUs=false, Ss=false, Ps=false, Ws=false, SLEs=false, Rs=false, Ms=false  ;
-    private boolean SUs=false, PUs=false, Ss=false, Ps=false;
-    private boolean Ws=false, SLEs=false;
     private int cash=0;
     static tester getInstance() {
         return ourInstance;
