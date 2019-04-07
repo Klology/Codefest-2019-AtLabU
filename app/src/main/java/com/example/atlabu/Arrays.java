@@ -18,7 +18,7 @@ public class Arrays {
     ArrayList<String> exerciseList = new ArrayList<>();
     exerciseList.add("Push-ups - Perform as many push-ups as you can in 1 Minute.");
     exerciseList.add("Sit-ups - Perform as many sit-ups as you can in 1 Minute.");
-    exerciseList.add("Squates - Perform as many squats as you can in 1 Minute.");
+    exerciseList.add("Squats - Perform as many squats as you can in 1 Minute.");
     exerciseList.add("Plank - Perform as much of a one minute plank as you can.");
     exerciseList.add("Free Style Exercise!!!!");
 

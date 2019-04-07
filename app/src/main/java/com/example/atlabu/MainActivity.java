@@ -11,6 +11,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
@@ -121,7 +122,6 @@ public class MainActivity extends AppCompatActivity {
         view.setVisibility(View.VISIBLE);
         curContent = view;
     }
-
 
     private void setProfile(){
         ((CompoundButton)findViewById(R.id.Ms)).setChecked(test.getMs());
