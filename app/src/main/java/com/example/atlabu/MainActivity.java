@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
     private FragmentManager fm = getSupportFragmentManager();
     private Challange_me challange_me;
+    private Shop shop;
     private Button lButton;
     private ImageButton shopButton, articleButton, testimonialButton;
     private View curContent, navBar;
@@ -153,6 +154,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.login).setVisibility(View.VISIBLE);
         curContent = findViewById(R.id.login);
         challange_me = (Challange_me) fm.findFragmentById(R.id.challange);
+        shop = (Shop) fm.findFragmentById(R.id.shop);
         navBar = findViewById(R.id.navBar);
         navBar.setVisibility(View.INVISIBLE);
 
@@ -166,6 +168,7 @@ public class MainActivity extends AppCompatActivity {
         shopButton = makeMoreButton(findViewById(R.id.shop), (ImageButton) findViewById(R.id.shopButton));
         articleButton = makeMoreButton(findViewById(R.id.article), (ImageButton) findViewById(R.id.articleButton));
         testimonialButton = makeMoreButton(findViewById(R.id.testimonial), (ImageButton) findViewById(R.id.testimonialButton));
+        shop.setUpShop();
         findViewById(R.id.cButton).setOnClickListener(cListener);
         findViewById(R.id.subProfile).setOnClickListener(profListener);
 

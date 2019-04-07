@@ -61,7 +61,7 @@ class tester {
         return SLEs;
     }
     public void mutCash(Context context, int points){
-        Toast toast = Toast.makeText(context,"+" + points + " Points!", Toast.LENGTH_SHORT);
+        Toast toast = Toast.makeText(context,points + " Points!", Toast.LENGTH_SHORT);
         toast.show();
         cash += points;
     }
