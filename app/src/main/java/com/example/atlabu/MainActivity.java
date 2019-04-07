@@ -39,8 +39,7 @@ public class MainActivity extends AppCompatActivity {
     private Button lButton;
     private ImageButton shopButton, articleButton, testimonialButton;
     private View curContent, navBar;
-    private boolean SitingUp=false, PushingUp=false, Squating=false, Planking=false;
-    private boolean Watering=false, Sleeping=false;
+    private tester test = tester.getOurInstance();
 
 
     //SharedPreferences sharedPref = MainActivity.this.getAct().getPreferences(Context.MODE_PRIVATE);
@@ -66,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.navigation_notifications:
                     //mTextMessage.setText(R.string.title_notifications);
                     //startActivity(new Intent(MainActivity.this, profile.class));
+                    setProfile();
                     changeContent(findViewById(R.id.profile));
                     return true;
             }
@@ -109,10 +109,21 @@ public class MainActivity extends AppCompatActivity {
         curContent = view;
     }
 
+
+    private void setProfile(){
+        ((CompoundButton)findViewById(R.id.Ms)).setChecked(test.getMs());
+        ((CompoundButton)findViewById(R.id.SleepS)).setChecked(test.getSLEs());
+        ((CompoundButton)findViewById(R.id.Ss)).setChecked(test.getSs());
+        ((CompoundButton)findViewById(R.id.SUs)).setChecked(test.getSUs());
+        ((CompoundButton)findViewById(R.id.Ps)).setChecked(test.getPs());
+        ((CompoundButton)findViewById(R.id.PUs)).setChecked(test.getPUs());
+        ((CompoundButton)findViewById(R.id.Ws)).setChecked(test.getWs());
+        ((CompoundButton)findViewById(R.id.Rs)).setChecked(test.getRs());
+    }
+
     private View.OnClickListener profListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            tester test = tester.getOurInstance();
             test.setMs(((CompoundButton)findViewById(R.id.Ms)).isChecked());
             test.setSLEs(((CompoundButton)findViewById(R.id.SleepS)).isChecked());
             test.setSs(((CompoundButton)findViewById(R.id.Ss)).isChecked());

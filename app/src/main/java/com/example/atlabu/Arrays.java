@@ -16,10 +16,10 @@ public class Arrays {
 
     public static ArrayList<String> getExercise(){
     ArrayList<String> exerciseList = new ArrayList<>();
-    exerciseList.add("Sit-Ups- Perform as many push-ups as you can in 1 Minute.");
-    exerciseList.add("Perform as many sit-ups as you can in 1 Minute.");
-    exerciseList.add("Perform as many squats as you can in 1 Minute.");
-    exerciseList.add("Perform as much of a one minute plank as you can.");
+    exerciseList.add("Push-ups - Perform as many push-ups as you can in 1 Minute.");
+    exerciseList.add("Sit-ups - Perform as many sit-ups as you can in 1 Minute.");
+    exerciseList.add("Squates - Perform as many squats as you can in 1 Minute.");
+    exerciseList.add("Plank - Perform as much of a one minute plank as you can.");
     exerciseList.add("Free Style Exercise!!!!");
 
         return exerciseList;
@@ -51,12 +51,6 @@ public class Arrays {
                 "and that no calamities will arise. This is when it’s most important to instill a culture " +
                 "of humility within your organization and to encourage decision-makers to review the history " +
                 "of their organization and industry.");
-        brainList.add("Math");
-        brainList.add("Math");
-        brainList.add("Math");
-        brainList.add("Math");
-        brainList.add("Math");
-
         //brainList.add("Match a vocabulary definition.");
         return brainList;
     }

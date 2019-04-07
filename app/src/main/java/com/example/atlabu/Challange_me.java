@@ -13,6 +13,7 @@ import android.widget.RelativeLayout;
 import android.widget.Button;
 import android.widget.Toast;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Random;
@@ -30,22 +31,22 @@ public class Challange_me extends Fragment {
     private CountDownTimer Running1;
     private CountDownTimer Running2;
     private TextView mTextMessage;
+    private boolean isMath;
     private Button buttonHolder;
     private View navBar;
     private long mTimeLeftInMillis;
     private long mTimeLeftForWarning;
     private Button submit;
     private TextView Question;
+    private tester test = tester.getOurInstance();
+    private Random r = new Random();
+    private boolean exercise, brain, health;
+    private int answer;
 
-    private boolean IsMaths = false;
-    private boolean SitingUp=false, PushingUp=false, Squating=false, Planking=false;
-    private boolean Watering=false, Sleeping=false;
-    private int answer=0;
 
-
-    ArrayList<String> Exers = new ArrayList<>();
-    ArrayList<String> Brai = new ArrayList<>();
-    ArrayList<String> Health = new ArrayList<>();
+    ArrayList<String> exercises = Arrays.getExercise();
+    ArrayList<String> brains = Arrays.getBrain();
+    ArrayList<String> healths = Arrays.getHealth();
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
@@ -56,6 +57,14 @@ public class Challange_me extends Fragment {
     }
 
     public void clock(View navBar) {
+        exercise = test.getPs() || test.getPUs() || test.getSUs() || test.getSs();
+        brain = test.getMs() || test.getRs();
+        health = test.getSLEs() || test.getWs();
+        if(!(brain || health || exercise)) {
+            Toast toast = Toast.makeText(getContext(),"Profile has no challenge prerences saved!", Toast.LENGTH_SHORT);
+            toast.show();
+            return;
+        }
         this.navBar = navBar;
         mTextMessage = (TextView) getView().findViewById(R.id.message);
         mTextViewCountDownPRIMARY = getView().findViewById(R.id.textViewCountDown);
@@ -65,16 +74,125 @@ public class Challange_me extends Fragment {
         FirstRun = getView().findViewById(R.id.SecondPanel);
         SecondRun = getView().findViewById(R.id.INITIALCOUNTDOWN);
         mPostQuesRW = getView().findViewById(R.id.Reading_Workout_Answer);
-        mPostQuesMAT = getView().findViewById(R.id.MAT_ANSWER);
+        mPostQuesMAT = getView().findViewById(R.id.mat_layout);
         mTimeLeftForWarning = WARNING_TIME_LENGTH;
         mTimeLeftInMillis = CHALLENGE_TIME_LENGTH;
         buttonHolder.setVisibility(View.INVISIBLE);
         FirstRun.setVisibility(View.VISIBLE);
         navBar.setVisibility(View.INVISIBLE);
         startTimer1();
+
     }
 
+    private void doExercise(){
+        switch(r.nextInt(4)){
+            case 0:
+                if(test.getPUs()) {
+                    ((TextView)getView().findViewById(R.id.didYouDo)).setText("Did you do your push-ups?");
+                    Question.setText(exercises.get(0));
+                    break;
+                }
 
+            case 1:
+                if(test.getSUs()) {
+                    ((TextView)getView().findViewById(R.id.didYouDo)).setText("Did you do your sit-ups?");
+                    Question.setText(exercises.get(1));
+                    break;
+                }
+
+            case 2:
+                if(test.getSs()) {
+                    ((TextView)getView().findViewById(R.id.didYouDo)).setText("Did you do your squats?");
+                    Question.setText(exercises.get(2));
+                    break;
+                }
+
+            default:
+                ((TextView)getView().findViewById(R.id.didYouDo)).setText("Did you plank?");
+                    Question.setText(exercises.get(3));
+                    break;
+        }
+
+        isMath = false;
+    }
+
+    private void doHealth(){
+        switch(r.nextInt(2)){
+            case 0:
+                if(test.getWs()) {
+                    ((TextView)getView().findViewById(R.id.didYouDo)).setText(healths.get(0));
+                    break;
+                }
+            default:
+                ((TextView)getView().findViewById(R.id.didYouDo)).setText(healths.get(1));
+                break;
+        }
+
+        mTimeLeftInMillis = 0;
+        isMath = false;
+    }
+
+    private void doRead(){
+        switch(r.nextInt(4)){
+            case 0:
+                Question.setText(brains.get(0));
+                break;
+
+            case 1:
+                Question.setText(brains.get(1));
+                break;
+
+            case 2:
+                Question.setText(brains.get(2));
+                break;
+
+            case 3:
+                Question.setText(brains.get(3));
+                break;
+
+        }
+
+        ((TextView)getView().findViewById(R.id.didYouDo)).setText("Did you finish Reading?");
+        isMath = false;
+    }
+
+    private void doMath(){
+
+    }
+
+    private void getChallenge(){
+        switch(r.nextInt(3)){
+            case 0:
+                if(health){
+                    doHealth();
+                    break;
+                }
+
+            case 1:
+                if(exercise){
+                    doExercise();
+                    break;
+                }
+            case 2:
+                if(brain){
+                    switch (r.nextInt(2)){
+                        case 0:
+                            if(test.getRs()){
+                                doRead();
+                                break;
+                            }
+
+                        default:
+                            doMath();
+
+                    }
+                    break;
+                }
+            default:
+                getChallenge();
+
+        }
+    }
 
     private void startTimer1() {
 
@@ -91,70 +209,10 @@ public class Challange_me extends Fragment {
                 FirstRun.setVisibility(View.INVISIBLE);
                 cancel();
                 SecondRun.setVisibility(View.VISIBLE);
+
+                getChallenge();
+
                 startTimer2();
-
-                tester test = tester.getOurInstance();
-                PushingUp=test.getPUs();
-                SitingUp=test.getSUs();
-                Planking=test.getPs();
-                Squating=test.getSs();
-                Watering=test.getWs();
-                Sleeping=test.getSLEs();
-
-                Random r = new Random();
-                int i1 = 1;//r.nextInt(3 - 0);
-                if(i1==0){
-                    int i2=4;
-                    //                           Toast toast2 = Toast.makeText(getApplicationContext(), "working0 " + i1, Toast.LENGTH_SHORT); toast2.show();
-                    Exers=Arrays.getExercise();
-                    boolean running = true;
-                    while(running){
-                        i2 = r.nextInt(5 - 0);
-                            /*exerciseList.add("Sit-Ups- Perform as many push-ups as you can in 1 Minute.");
-                            exerciseList.add("Perform as many sit-ups as you can in 1 Minute.");
-                            exerciseList.add("Perform as many squats as you can in 1 Minute.");
-                            exerciseList.add("Perform as much of a one minute plank as you can.");
-                            exerciseList.add("Free Style Exercise!!!!");*/
-                            if(PushingUp && i2==0){running = false;}
-                            else if(SitingUp && i2==1){running = false;}
-                            else if(Squating && i2==2){running = false;}
-                            else if(Planking && i2==3){running = false;}
-                            else if(i2==4){running = false;}
-                            else{
-                                running=true;
-                            }
-                    }
-                    Watering=test.getWs();
-                    Toast toast2 = Toast.makeText(getContext(), "working0 " + i2 + Exers.get(i2), Toast.LENGTH_SHORT); toast2.show();
-
-                }if(i1==1){
-                    Toast toast2 = Toast.makeText(getContext(), "working1 " + i1, Toast.LENGTH_SHORT); toast2.show();
-
-                    Brai=Arrays.getBrain();
-                    int i3 = 8;//r.nextInt(10 - 0);
-                    if(i3<=4) {
-                        Toast toast3 = Toast.makeText(getContext(), "working0 " + i3 + Brai.get(i3), Toast.LENGTH_SHORT);
-                        toast3.show();
-                    }else{
-                        IsMaths=true;
-                    }
-
-
-
-
-
-
-                }if(i1==2){
-                    //Toast toast2 = Toast.makeText(getApplicationContext(), "working2 " + i1, Toast.LENGTH_SHORT); toast2.show();
-                    Health=Arrays.getHealth();
-                    int i4 = r.nextInt(3 - 0);
-
-                    Toast toast2 = Toast.makeText(getContext(), "working0 " + i4 + Health.get(i4), Toast.LENGTH_SHORT); toast2.show();
-
-                }
-                //Toast toast2 = Toast.makeText(getApplicationContext(), "working " + i1, Toast.LENGTH_SHORT); toast2.show();
-
-
             }
         }.start();
         updateCountDownWarningText();
@@ -173,20 +231,16 @@ public class Challange_me extends Fragment {
             @Override
             public void onFinish() {
                 SecondRun.setVisibility(View.INVISIBLE);
-                buttonHolder.setVisibility(View.VISIBLE);
-                navBar.setVisibility(View.VISIBLE);
                 cancel();
 
-
-
-                if(IsMaths) {
+                mPostQuesRW.setVisibility(View.VISIBLE);
+                /*
+                if(isMath) {
                     buttonHolder.setVisibility(View.INVISIBLE);
                     mPostQuesRW.setVisibility(View.VISIBLE);
                     Question.setVisibility(View.VISIBLE);
 
-
                     String mathsing = "";
-                    Random r = new Random();
                     int mMutNum = r.nextInt(4);
                     int mNum1 = r.nextInt(100);
                     int mNum2 = r.nextInt(100);
@@ -214,16 +268,10 @@ public class Challange_me extends Fragment {
                             break;
                         default:
                             break;
-
-
-
                     }
 
 
-
-
                     //Question.setText( );
-
 
                     submit = getView().findViewById(R.id.SubMath);
                     submit.setOnClickListener(new View.OnClickListener() {
@@ -232,23 +280,22 @@ public class Challange_me extends Fragment {
                             String thing = answer + "";
                             String thing2 = Question.getText() + "";
                             if( thing == thing2){
-                                tester test = tester.getOurInstance();
                                 test.mutCash(50);
                             }
                         }
                     });
                 }
-                else{
-                    submit = getView().findViewById(R.id.SubMath);
-                    submit.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
+                */
 
-                        }
-                    });
-                    buttonHolder.setVisibility(View.INVISIBLE);
-                    mPostQuesMAT.setVisibility(View.VISIBLE);
-                }
+                submit = getView().findViewById(R.id.subYes);
+                submit.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        mPostQuesRW.setVisibility(View.INVISIBLE);
+                        buttonHolder.setVisibility(View.VISIBLE);
+                        navBar.setVisibility(View.VISIBLE);
+                    }
+                });
 
             }
         }.start();
