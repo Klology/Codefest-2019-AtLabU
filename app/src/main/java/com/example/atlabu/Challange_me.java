@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.RelativeLayout;
 import android.widget.Button;
@@ -33,9 +34,13 @@ public class Challange_me extends Fragment {
     private View navBar;
     private long mTimeLeftInMillis;
     private long mTimeLeftForWarning;
+    private Button submit;
+    private TextView Question;
 
+    private boolean IsMaths = false;
     private boolean SitingUp=false, PushingUp=false, Squating=false, Planking=false;
     private boolean Watering=false, Sleeping=false;
+    private int answer=0;
 
 
     ArrayList<String> Exers = new ArrayList<>();
@@ -55,6 +60,7 @@ public class Challange_me extends Fragment {
         mTextMessage = (TextView) getView().findViewById(R.id.message);
         mTextViewCountDownPRIMARY = getView().findViewById(R.id.textViewCountDown);
         mTextViewCountDownWARNING = getView().findViewById(R.id.WARNING_NUMBER);
+        Question = getView().findViewById(R.id.Question);
         buttonHolder = getView().findViewById(R.id.cButton);
         FirstRun = getView().findViewById(R.id.SecondPanel);
         SecondRun = getView().findViewById(R.id.INITIALCOUNTDOWN);
@@ -96,7 +102,7 @@ public class Challange_me extends Fragment {
                 Sleeping=test.getSLEs();
 
                 Random r = new Random();
-                int i1 = r.nextInt(3 - 0);
+                int i1 = 1;//r.nextInt(3 - 0);
                 if(i1==0){
                     int i2=4;
                     //                           Toast toast2 = Toast.makeText(getApplicationContext(), "working0 " + i1, Toast.LENGTH_SHORT); toast2.show();
@@ -125,9 +131,18 @@ public class Challange_me extends Fragment {
                     Toast toast2 = Toast.makeText(getContext(), "working1 " + i1, Toast.LENGTH_SHORT); toast2.show();
 
                     Brai=Arrays.getBrain();
-                    int i3 = r.nextInt(5 - 0);
+                    int i3 = 8;//r.nextInt(10 - 0);
+                    if(i3<=4) {
+                        Toast toast3 = Toast.makeText(getContext(), "working0 " + i3 + Brai.get(i3), Toast.LENGTH_SHORT);
+                        toast3.show();
+                    }else{
+                        IsMaths=true;
+                    }
 
-                   Toast toast3 = Toast.makeText(getContext(), "working0 " + i3 + Brai.get(i3), Toast.LENGTH_SHORT); toast3.show();
+
+
+
+
 
                 }if(i1==2){
                     //Toast toast2 = Toast.makeText(getApplicationContext(), "working2 " + i1, Toast.LENGTH_SHORT); toast2.show();
@@ -161,12 +176,76 @@ public class Challange_me extends Fragment {
                 buttonHolder.setVisibility(View.VISIBLE);
                 navBar.setVisibility(View.VISIBLE);
                 cancel();
-                int isMath = 1;
-                if(isMath ==0) {
+
+
+
+                if(IsMaths) {
                     buttonHolder.setVisibility(View.INVISIBLE);
                     mPostQuesRW.setVisibility(View.VISIBLE);
+                    Question.setVisibility(View.VISIBLE);
+
+
+                    String mathsing = "";
+                    Random r = new Random();
+                    int mMutNum = r.nextInt(4);
+                    int mNum1 = r.nextInt(100);
+                    int mNum2 = r.nextInt(100);
+
+                    switch(mMutNum){
+                        case 1:
+                            mathsing = " " + mNum1 + " + " + mNum2 +" ";
+                            Question.setText(mathsing);
+                            answer = mNum1 + mNum2;
+                            break;
+                        case 2:
+                            mathsing = " " + mNum1 + " - " + mNum2 +" ";
+                            Question.setText(mathsing);
+                            answer = mNum1 - mNum2;
+                            break;
+                        case 3:
+                            mathsing = " " + mNum1 + " X " + mNum2 +" ";
+                            Question.setText(mathsing);
+                            answer = mNum1 * mNum2;
+                            break;
+                        case 4:
+                            mathsing = " " + mNum1 + " / " + mNum2 +" ";
+                            Question.setText(mathsing);
+                            answer = mNum1 / mNum2;
+                            break;
+                        default:
+                            break;
+
+
+
+                    }
+
+
+
+
+                    //Question.setText( );
+
+
+                    submit = getView().findViewById(R.id.SubMath);
+                    submit.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            String thing = answer + "";
+                            String thing2 = Question.getText() + "";
+                            if( thing == thing2){
+                                tester test = tester.getOurInstance();
+                                test.mutCash(50);
+                            }
+                        }
+                    });
                 }
                 else{
+                    submit = getView().findViewById(R.id.SubMath);
+                    submit.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+
+                        }
+                    });
                     buttonHolder.setVisibility(View.INVISIBLE);
                     mPostQuesMAT.setVisibility(View.VISIBLE);
                 }

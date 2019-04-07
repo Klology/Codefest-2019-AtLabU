@@ -186,6 +186,12 @@ public class MainActivity extends AppCompatActivity {
                 test.setSLEs(isChecked);
             }
         });
+        EditText number = findViewById(R.id.mathDif);
+        //number.setOnFocusChangeListener(new View.OnFocusChangeListener(){
+
+
+
+        //});
 
     }
 

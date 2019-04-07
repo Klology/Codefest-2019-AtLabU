@@ -4,6 +4,7 @@ class tester {
     private static final tester ourInstance = new tester();
     private boolean SUs=false, PUs=false, Ss=false, Ps=false;
     private boolean Ws=false, SLEs=false;
+    private int cash=0;
     static tester getInstance() {
         return ourInstance;
     }
@@ -58,6 +59,13 @@ class tester {
     }
     public boolean getSLEs(){
         return SLEs;
+    }
+    public void mutCash(int points){
+        cash += points;
+    }
+    public int getCash(){
+
+        return cash;
     }
 
 

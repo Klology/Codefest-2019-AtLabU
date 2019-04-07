@@ -51,7 +51,12 @@ public class Arrays {
                 "and that no calamities will arise. This is when it’s most important to instill a culture " +
                 "of humility within your organization and to encourage decision-makers to review the history " +
                 "of their organization and industry.");
-        //brainList.add("Solve a math problem.");
+        brainList.add("Math");
+        brainList.add("Math");
+        brainList.add("Math");
+        brainList.add("Math");
+        brainList.add("Math");
+
         //brainList.add("Match a vocabulary definition.");
         return brainList;
     }

@@ -115,7 +115,7 @@
         android:layout_marginStart="13dp"
         android:layout_marginBottom="25dp"
         android:text="What Level of Knowlage do you have?"
-        app:layout_constraintBottom_toTopOf="@+id/editText6"
+        app:layout_constraintBottom_toTopOf="@+id/mathDif"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Ss"
         android:layout_marginLeft="13dp" />
@@ -130,7 +130,7 @@
         android:layout_marginBottom="80dp"
         android:text="From 1 - 1000, how good are you at math?"
         app:layout_constraintBottom_toBottomOf="@+id/editText7"
-        app:layout_constraintEnd_toStartOf="@+id/editText6"
+        app:layout_constraintEnd_toStartOf="@+id/mathDif"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Ss"
         android:layout_marginLeft="13dp"
@@ -181,7 +181,7 @@
         app:layout_constraintTop_toBottomOf="@+id/Ws" />
 
     <EditText
-        android:id="@+id/editText6"
+        android:id="@+id/mathDif"
         android:layout_width="0dp"
         android:layout_height="43dp"
         android:layout_marginEnd="17dp"
@@ -205,7 +205,7 @@
         app:layout_constraintBottom_toTopOf="@+id/SButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/editText6"
+        app:layout_constraintTop_toBottomOf="@+id/mathDif"
         android:layout_marginRight="16dp" />
 
     <EditText
