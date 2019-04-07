@@ -20,6 +20,7 @@ public class Arrays {
     exerciseList.add("Perform as many sit-ups as you can in 1 Minute.");
     exerciseList.add("Perform as many squats as you can in 1 Minute.");
     exerciseList.add("Perform as much of a one minute plank as you can.");
+    exerciseList.add("Free Style Exercise!!!!");
 
         return exerciseList;
     }

@@ -99,21 +99,38 @@ public class Challange_me extends Fragment {
                 SecondRun.setVisibility(View.VISIBLE);
                 startTimer2();
 
-                tester test = new tester();
-                test.setPUs(PushingUp);
-                test.setSUs(SitingUp);
-                test.setPs(Planking);
-                test.setSs(Squating);
-                test.setWs(Watering);
-                test.setSLEs(Sleeping);
+                tester test = tester.getOurInstance();
+                PushingUp=test.getPUs();
+                SitingUp=test.getSUs();
+                Planking=test.getPs();
+                Squating=test.getSs();
+                Watering=test.getWs();
+                Sleeping=test.getSLEs();
 
                 Random r = new Random();
                 int i1 = r.nextInt(3 - 0);
                 if(i1==0){
+                    int i2=4;
                     //                           Toast toast2 = Toast.makeText(getApplicationContext(), "working0 " + i1, Toast.LENGTH_SHORT); toast2.show();
                     Exers=Arrays.getExercise();
-                    int i2 = r.nextInt(4 - 0);
-
+                    boolean running = true;
+                    while(running){
+                        i2 = r.nextInt(5 - 0);
+                            /*exerciseList.add("Sit-Ups- Perform as many push-ups as you can in 1 Minute.");
+                            exerciseList.add("Perform as many sit-ups as you can in 1 Minute.");
+                            exerciseList.add("Perform as many squats as you can in 1 Minute.");
+                            exerciseList.add("Perform as much of a one minute plank as you can.");
+                            exerciseList.add("Free Style Exercise!!!!");*/
+                            if(PushingUp && i2==0){running = false;}
+                            else if(SitingUp && i2==1){running = false;}
+                            else if(Squating && i2==2){running = false;}
+                            else if(Planking && i2==3){running = false;}
+                            else if(i2==4){running = false;}
+                            else{
+                                running=true;
+                            }
+                    }
+                    Watering=test.getWs();
                     Toast toast2 = Toast.makeText(getContext(), "working0 " + i2 + Exers.get(i2), Toast.LENGTH_SHORT); toast2.show();
 
                 }if(i1==1){
@@ -129,7 +146,7 @@ public class Challange_me extends Fragment {
                     Health=Arrays.getHealth();
                     int i4 = r.nextInt(3 - 0);
 
-                    //Toast toast2 = Toast.makeText(getApplicationContext(), "working0 " + i4 + Health.get(i4), Toast.LENGTH_SHORT); toast2.show();
+                    Toast toast2 = Toast.makeText(getContext(), "working0 " + i4 + Health.get(i4), Toast.LENGTH_SHORT); toast2.show();
 
                 }
                 //Toast toast2 = Toast.makeText(getApplicationContext(), "working " + i1, Toast.LENGTH_SHORT); toast2.show();

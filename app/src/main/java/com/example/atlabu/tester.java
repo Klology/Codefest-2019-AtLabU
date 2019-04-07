@@ -1,18 +1,22 @@
 package com.example.atlabu;
 
 class tester {
-    public static final tester ourInstance = new tester();
+    private static final tester ourInstance = new tester();
     private boolean SUs=false, PUs=false, Ss=false, Ps=false;
     private boolean Ws=false, SLEs=false;
     static tester getInstance() {
         return ourInstance;
     }
 
-    public tester() {
+    private tester() {
 
 
 
 
+    }
+
+    public static tester getOurInstance() {
+        return ourInstance;
     }
 
     public void setUsername (String username){

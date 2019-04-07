@@ -138,9 +138,25 @@ public class MainActivity extends AppCompatActivity {
                 if(isChecked){
                     Toast toast = Toast.makeText(getApplicationContext(), "Push-Ups ON!", Toast.LENGTH_SHORT); toast.show();
                     PushingUp=true;
+
+                    tester test = tester.getOurInstance();
+                    test.setPUs(PushingUp);
+                    test.setSUs(SitingUp);
+                    test.setPs(Planking);
+                    test.setSs(Squating);
+                    test.setWs(Watering);
+                    test.setSLEs(Sleeping);
                 }else{
                     Toast toast = Toast.makeText(getApplicationContext(), "Push-ups OFF", Toast.LENGTH_SHORT); toast.show();
                     PushingUp=false;
+
+                    tester test = tester.getOurInstance();
+                    test.setPUs(PushingUp);
+                    test.setSUs(SitingUp);
+                    test.setPs(Planking);
+                    test.setSs(Squating);
+                    test.setWs(Watering);
+                    test.setSLEs(Sleeping);
                 }
 
                 //Toast toast = Toast.makeText(getApplicationContext(), "This is a message displayed in a Toast", Toast.LENGTH_SHORT); toast.show();
@@ -152,9 +168,25 @@ public class MainActivity extends AppCompatActivity {
                 if(isChecked){
                     Toast toast = Toast.makeText(getApplicationContext(), "Sit-Ups ON!", Toast.LENGTH_SHORT); toast.show();
                     SitingUp=true;
+
+                    tester test = tester.getOurInstance();
+                    test.setPUs(PushingUp);
+                    test.setSUs(SitingUp);
+                    test.setPs(Planking);
+                    test.setSs(Squating);
+                    test.setWs(Watering);
+                    test.setSLEs(Sleeping);
                 }else{
                     Toast toast = Toast.makeText(getApplicationContext(), "Sit-ups OFF", Toast.LENGTH_SHORT); toast.show();
                     SitingUp=false;
+
+                    tester test = tester.getOurInstance();
+                    test.setPUs(PushingUp);
+                    test.setSUs(SitingUp);
+                    test.setPs(Planking);
+                    test.setSs(Squating);
+                    test.setWs(Watering);
+                    test.setSLEs(Sleeping);
                 }            }
         });
         Switch Squ = findViewById(R.id.Ss);
@@ -163,9 +195,25 @@ public class MainActivity extends AppCompatActivity {
                 if(isChecked){
                     Toast toast = Toast.makeText(getApplicationContext(), "Squats ON!", Toast.LENGTH_SHORT); toast.show();
                     Squating=true;
+
+                    tester test = tester.getOurInstance();
+                    test.setPUs(PushingUp);
+                    test.setSUs(SitingUp);
+                    test.setPs(Planking);
+                    test.setSs(Squating);
+                    test.setWs(Watering);
+                    test.setSLEs(Sleeping);
                 }else{
                     Toast toast = Toast.makeText(getApplicationContext(), "Squats OFF", Toast.LENGTH_SHORT); toast.show();
                     Squating=false;
+
+                    tester test = tester.getOurInstance();
+                    test.setPUs(PushingUp);
+                    test.setSUs(SitingUp);
+                    test.setPs(Planking);
+                    test.setSs(Squating);
+                    test.setWs(Watering);
+                    test.setSLEs(Sleeping);
                 }            }
         });
         Switch plank = findViewById(R.id.Ps);
@@ -174,12 +222,28 @@ public class MainActivity extends AppCompatActivity {
                 if(isChecked){
                     Toast toast = Toast.makeText(getApplicationContext(), "Plank ON!", Toast.LENGTH_SHORT); toast.show();
                     Planking=true;
+
+                    tester test = tester.getOurInstance();
+                    test.setPUs(PushingUp);
+                    test.setSUs(SitingUp);
+                    test.setPs(Planking);
+                    test.setSs(Squating);
+                    test.setWs(Watering);
+                    test.setSLEs(Sleeping);
                     //thing = Arrays
 
 
                 }else{
                     Toast toast = Toast.makeText(getApplicationContext(), "Plank OFF", Toast.LENGTH_SHORT); toast.show();
                     Planking=false;
+
+                    tester test = tester.getOurInstance();
+                    test.setPUs(PushingUp);
+                    test.setSUs(SitingUp);
+                    test.setPs(Planking);
+                    test.setSs(Squating);
+                    test.setWs(Watering);
+                    test.setSLEs(Sleeping);
                 }            }
         });
         Switch Water = findViewById(R.id.Ws);
@@ -188,9 +252,25 @@ public class MainActivity extends AppCompatActivity {
                 if(isChecked){
                     Toast toast = Toast.makeText(getApplicationContext(), "Water ON!", Toast.LENGTH_SHORT); toast.show();
                     Watering=true;
+
+                    tester test = tester.getOurInstance();
+                    test.setPUs(PushingUp);
+                    test.setSUs(SitingUp);
+                    test.setPs(Planking);
+                    test.setSs(Squating);
+                    test.setWs(Watering);
+                    test.setSLEs(Sleeping);
                 }else{
                     Toast toast = Toast.makeText(getApplicationContext(), "Water OFF", Toast.LENGTH_SHORT); toast.show();
                     Watering=false;
+
+                    tester test = tester.getOurInstance();
+                    test.setPUs(PushingUp);
+                    test.setSUs(SitingUp);
+                    test.setPs(Planking);
+                    test.setSs(Squating);
+                    test.setWs(Watering);
+                    test.setSLEs(Sleeping);
                 }            }
         });
         Switch Sleep = findViewById(R.id.SleepS);
@@ -199,11 +279,27 @@ public class MainActivity extends AppCompatActivity {
                 if(isChecked){
                     //Toast toast = Toast.makeText(getApplicationContext(), "Sleep ON!", Toast.LENGTH_SHORT); toast.show();
                     Sleeping=true;
+
+                    tester test = tester.getOurInstance();
+                    test.setPUs(PushingUp);
+                    test.setSUs(SitingUp);
+                    test.setPs(Planking);
+                    test.setSs(Squating);
+                    test.setWs(Watering);
+                    test.setSLEs(Sleeping);
                     Toast toast = Toast.makeText(getApplicationContext(), "Sleep On!", Toast.LENGTH_SHORT); toast.show();
 
                 }else{
                     Toast toast = Toast.makeText(getApplicationContext(), "Sleep OFF", Toast.LENGTH_SHORT); toast.show();
                     Sleeping=false;
+
+                    tester test = tester.getOurInstance();
+                    test.setPUs(PushingUp);
+                    test.setSUs(SitingUp);
+                    test.setPs(Planking);
+                    test.setSs(Squating);
+                    test.setWs(Watering);
+                    test.setSLEs(Sleeping);
                 }            }
         });
 
@@ -213,13 +309,7 @@ public class MainActivity extends AppCompatActivity {
 
         //AssetManager assetManager = getAssets();
        // InputStream IS = assetManager.open("Pref.txt");
-        tester test = new tester();
-        test.setPUs(PushingUp);
-        test.setSUs(SitingUp);
-        test.setPs(Planking);
-        test.setSs(Squating);
-        test.setWs(Watering);
-        test.setSLEs(Sleeping);
+
 
 
     }
