@@ -76,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
             EditText edit = findViewById(R.id.userNameSub);
             TextView text = findViewById(R.id.userNameDis);
             text.setText(edit.getText());
+            navBar.setVisibility(View.VISIBLE);
         }
     };
 
@@ -113,6 +114,7 @@ public class MainActivity extends AppCompatActivity {
         curContent = findViewById(R.id.login);
         challange_me = (Challange_me) fm.findFragmentById(R.id.challange);
         navBar = findViewById(R.id.navBar);
+        navBar.setVisibility(View.INVISIBLE);
 
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
