@@ -30,9 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private View curContent;
     private boolean SitingUp=false, PushingUp=false, Squating=false, Planking=false;
     private boolean Watering=false, Sleeping=false;
-    ArrayList<String> Exers = new ArrayList<>();
-    ArrayList<String> Brai = new ArrayList<>();
-    ArrayList<String> Health = new ArrayList<>();
+
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -184,32 +182,7 @@ public class MainActivity extends AppCompatActivity {
                     Sleeping=true;
 
                     if(Sleeping) {
-                        Random r = new Random();
-                        int i1 = r.nextInt(3 - 0);
-                        if(i1==0){
- //                           Toast toast2 = Toast.makeText(getApplicationContext(), "working0 " + i1, Toast.LENGTH_SHORT); toast2.show();
-                            Exers=Arrays.getExercise();
-                            int i2 = r.nextInt(4 - 0);
 
-                            Toast toast2 = Toast.makeText(getApplicationContext(), "working0 " + i2 + Exers.get(i2), Toast.LENGTH_SHORT); toast2.show();
-
-                        }if(i1==1){
-                            //Toast toast2 = Toast.makeText(getApplicationContext(), "working1 " + i1, Toast.LENGTH_SHORT); toast2.show();
-
-                            Brai=Arrays.getBrain();
-                            int i3 = r.nextInt(5 - 0);
-
-                            Toast toast2 = Toast.makeText(getApplicationContext(), "working0 " + i3 + Brai.get(i3), Toast.LENGTH_SHORT); toast2.show();
-
-                        }if(i1==2){
-                            //Toast toast2 = Toast.makeText(getApplicationContext(), "working2 " + i1, Toast.LENGTH_SHORT); toast2.show();
-                            Health=Arrays.getHealth();
-                            int i4 = r.nextInt(3 - 0);
-
-                            Toast toast2 = Toast.makeText(getApplicationContext(), "working0 " + i4 + Health.get(i4), Toast.LENGTH_SHORT); toast2.show();
-
-                        }
-                        //Toast toast2 = Toast.makeText(getApplicationContext(), "working " + i1, Toast.LENGTH_SHORT); toast2.show();
                     }
 
 

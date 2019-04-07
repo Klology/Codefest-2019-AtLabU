@@ -10,7 +10,11 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.RelativeLayout;
 import android.widget.Button;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 import java.util.Locale;
+import java.util.Random;
 
 public class Challange_me extends Fragment {
 
@@ -26,6 +30,10 @@ public class Challange_me extends Fragment {
     private Button buttonHolder;
     private long mTimeLeftInMillis;
     private long mTimeLeftForWarning;
+
+    ArrayList<String> Exers = new ArrayList<>();
+    ArrayList<String> Brai = new ArrayList<>();
+    ArrayList<String> Health = new ArrayList<>();
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
@@ -85,9 +93,39 @@ public class Challange_me extends Fragment {
                 cancel();
                 SecondRun.setVisibility(View.VISIBLE);
                 startTimer2();
+
+                Random r = new Random();
+                int i1 = r.nextInt(3 - 0);
+                if(i1==0){
+                    //                           Toast toast2 = Toast.makeText(getApplicationContext(), "working0 " + i1, Toast.LENGTH_SHORT); toast2.show();
+                    Exers=Arrays.getExercise();
+                    int i2 = r.nextInt(4 - 0);
+
+                    Toast toast2 = Toast.makeText(getContext(), "working0 " + i2 + Exers.get(i2), Toast.LENGTH_SHORT); toast2.show();
+
+                }if(i1==1){
+                    Toast toast2 = Toast.makeText(getContext(), "working1 " + i1, Toast.LENGTH_SHORT); toast2.show();
+
+                    Brai=Arrays.getBrain();
+                    int i3 = r.nextInt(5 - 0);
+
+                   Toast toast3 = Toast.makeText(getContext(), "working0 " + i3 + Brai.get(i3), Toast.LENGTH_SHORT); toast3.show();
+
+                }if(i1==2){
+                    //Toast toast2 = Toast.makeText(getApplicationContext(), "working2 " + i1, Toast.LENGTH_SHORT); toast2.show();
+                    Health=Arrays.getHealth();
+                    int i4 = r.nextInt(3 - 0);
+
+                    //Toast toast2 = Toast.makeText(getApplicationContext(), "working0 " + i4 + Health.get(i4), Toast.LENGTH_SHORT); toast2.show();
+
+                }
+                //Toast toast2 = Toast.makeText(getApplicationContext(), "working " + i1, Toast.LENGTH_SHORT); toast2.show();
+
+
             }
         }.start();
         updateCountDownWarningText();
+
     }
     private void startTimer2() {
 
