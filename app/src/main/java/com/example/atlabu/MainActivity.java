@@ -109,6 +109,22 @@ public class MainActivity extends AppCompatActivity {
         curContent = view;
     }
 
+    private View.OnClickListener profListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            tester test = tester.getOurInstance();
+            test.setMs(((CompoundButton)findViewById(R.id.Ms)).isChecked());
+            test.setSLEs(((CompoundButton)findViewById(R.id.SleepS)).isChecked());
+            test.setSs(((CompoundButton)findViewById(R.id.Ss)).isChecked());
+            test.setSUs(((CompoundButton)findViewById(R.id.SUs)).isChecked());
+            test.setPs(((CompoundButton)findViewById(R.id.Ps)).isChecked());
+            test.setPUs(((CompoundButton)findViewById(R.id.PUs)).isChecked());
+            test.setWs(((CompoundButton)findViewById(R.id.Ws)).isChecked());
+            test.setRs(((CompoundButton)findViewById(R.id.Rs)).isChecked());
+
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -138,60 +154,8 @@ public class MainActivity extends AppCompatActivity {
         articleButton = makeMoreButton(findViewById(R.id.article), (ImageButton) findViewById(R.id.articleButton));
         testimonialButton = makeMoreButton(findViewById(R.id.testimonial), (ImageButton) findViewById(R.id.testimonialButton));
         findViewById(R.id.cButton).setOnClickListener(cListener);
+        findViewById(R.id.subProfile).setOnClickListener(profListener);
 
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-        final Switch PushUp = findViewById(R.id.PUs);
-        PushUp.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                tester test = tester.getOurInstance();
-                test.setPUs(isChecked);
-
-                //Toast toast = Toast.makeText(getApplicationContext(), "This is a message displayed in a Toast", Toast.LENGTH_SHORT); toast.show();
-            }
-        });
-        Switch SitUp = findViewById(R.id.SUs);
-        SitUp.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                tester test = tester.getOurInstance();
-                test.setSUs(isChecked);
-            }
-        });
-        Switch Squ = findViewById(R.id.Ss);
-        Squ.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                tester test = tester.getOurInstance();
-                test.setSs(isChecked);
-            }
-        });
-        Switch plank = findViewById(R.id.Ps);
-        plank.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                tester test = tester.getOurInstance();
-                test.setPs(isChecked);
-            }
-        });
-        Switch Water = findViewById(R.id.Ws);
-        Water.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-
-                tester test = tester.getOurInstance();
-                test.setWs(isChecked);
-            }
-        });
-        Switch Sleep = findViewById(R.id.SleepS);
-        Sleep.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                tester test = tester.getOurInstance();
-                test.setSLEs(isChecked);
-            }
-        });
-        EditText number = findViewById(R.id.mathDif);
-        //number.setOnFocusChangeListener(new View.OnFocusChangeListener(){
-
-
-
-        //});
 
     }
 

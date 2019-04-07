@@ -2,6 +2,7 @@ package com.example.atlabu;
 
 class tester {
     private static final tester ourInstance = new tester();
+    private boolean SUs=false, PUs=false, Ss=false, Ps=false, Ws=false, SLEs=false, Rs=false, Ms=false  ;
     private boolean SUs=false, PUs=false, Ss=false, Ps=false;
     private boolean Ws=false, SLEs=false;
     private int cash=0;
@@ -24,23 +25,21 @@ class tester {
        // this.username = username;
     }
     public void setPUs(Boolean PUz){
-        PUs = PUz;
+        this.PUs = PUz;
     }
     public void setSUs(Boolean SUz){
-        SUs = SUz;
+        this.SUs = SUz;
     }
     public void setSs(Boolean Sz){
-        Ss = Sz;
+        this.Ss = Sz;
     }
     public void setPs(Boolean Pz){
-        Ps = Pz;
+        this.Ps = Pz;
     }
-    public void setWs(Boolean Wz){
-        Ws = Wz;
-    }
-    public void setSLEs(Boolean SLEz){
-        SLEs = SLEz;
-    }
+    public void setWs(Boolean Wz){ this.Ws = Wz; }
+    public void setSLEs(Boolean SLEz){ this.SLEs = SLEz; }
+    public void setRs(Boolean Rs){ this.Rs = Rs; }
+    public void setMs(Boolean Ms){ this.Ms = Ms; }
 //////////////////////////geters
     public boolean getPUs(){
         return PUs;
@@ -68,5 +67,11 @@ class tester {
         return cash;
     }
 
+    public boolean getRs(){
+        return Rs;
+    }
+    public boolean getMs(){
+        return Ms;
+    }
 
 }
