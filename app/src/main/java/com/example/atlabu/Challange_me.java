@@ -96,7 +96,25 @@ public class Challange_me extends Fragment {
                 Sleeping=test.getSLEs();
 
                 Random r = new Random();
-                int i1 = r.nextInt(3);
+
+                switch(r.nextInt(3)) {
+                    case 0:
+
+                        if(PushingUp || SitingUp || Planking || Squating){
+
+                        }
+
+                    case 1:
+                        if(Watering || Sleeping){
+
+                        }
+
+                    case 2:
+
+                        break;
+
+                }
+                /*
                 if(i1==0){
                     int i2=4;
                     //                           Toast toast2 = Toast.makeText(getApplicationContext(), "working0 " + i1, Toast.LENGTH_SHORT); toast2.show();
@@ -108,7 +126,7 @@ public class Challange_me extends Fragment {
                             exerciseList.add("Perform as many sit-ups as you can in 1 Minute.");
                             exerciseList.add("Perform as many squats as you can in 1 Minute.");
                             exerciseList.add("Perform as much of a one minute plank as you can.");
-                            exerciseList.add("Free Style Exercise!!!!");*/
+                            exerciseList.add("Free Style Exercise!!!!");*//*
                             if(PushingUp && i2==0){running = false;}
                             else if(SitingUp && i2==1){running = false;}
                             else if(Squating && i2==2){running = false;}
@@ -139,7 +157,7 @@ public class Challange_me extends Fragment {
                 }
                 //Toast toast2 = Toast.makeText(getApplicationContext(), "working " + i1, Toast.LENGTH_SHORT); toast2.show();
 
-
+*/
             }
         }.start();
         updateCountDownWarningText();
