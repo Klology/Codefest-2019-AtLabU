@@ -96,14 +96,14 @@ public class Challange_me extends Fragment {
                 Sleeping=test.getSLEs();
 
                 Random r = new Random();
-                int i1 = r.nextInt(3 - 0);
+                int i1 = r.nextInt(3);
                 if(i1==0){
                     int i2=4;
                     //                           Toast toast2 = Toast.makeText(getApplicationContext(), "working0 " + i1, Toast.LENGTH_SHORT); toast2.show();
                     Exers=Arrays.getExercise();
                     boolean running = true;
                     while(running){
-                        i2 = r.nextInt(5 - 0);
+                        i2 = r.nextInt(5);
                             /*exerciseList.add("Sit-Ups- Perform as many push-ups as you can in 1 Minute.");
                             exerciseList.add("Perform as many sit-ups as you can in 1 Minute.");
                             exerciseList.add("Perform as many squats as you can in 1 Minute.");
@@ -125,14 +125,14 @@ public class Challange_me extends Fragment {
                     Toast toast2 = Toast.makeText(getContext(), "working1 " + i1, Toast.LENGTH_SHORT); toast2.show();
 
                     Brai=Arrays.getBrain();
-                    int i3 = r.nextInt(5 - 0);
+                    int i3 = r.nextInt(5);
 
                    Toast toast3 = Toast.makeText(getContext(), "working0 " + i3 + Brai.get(i3), Toast.LENGTH_SHORT); toast3.show();
 
                 }if(i1==2){
                     //Toast toast2 = Toast.makeText(getApplicationContext(), "working2 " + i1, Toast.LENGTH_SHORT); toast2.show();
                     Health=Arrays.getHealth();
-                    int i4 = r.nextInt(3 - 0);
+                    int i4 = r.nextInt(3);
 
                     Toast toast2 = Toast.makeText(getContext(), "working0 " + i4 + Health.get(i4), Toast.LENGTH_SHORT); toast2.show();
 
