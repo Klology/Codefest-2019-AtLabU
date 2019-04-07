@@ -1,5 +1,8 @@
 package com.example.atlabu;
 
+import android.content.Context;
+import android.widget.Toast;
+
 class tester {
     private static final tester ourInstance = new tester();
     private boolean SUs=false, PUs=false, Ss=false, Ps=false, Ws=false, SLEs=false, Rs=false, Ms=false  ;
@@ -57,7 +60,9 @@ class tester {
     public boolean getSLEs(){
         return SLEs;
     }
-    public void mutCash(int points){
+    public void mutCash(Context context, int points){
+        Toast toast = Toast.makeText(context,points + " Points!", Toast.LENGTH_SHORT);
+        toast.show();
         cash += points;
     }
     public int getCash(){

@@ -36,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
 
     private FragmentManager fm = getSupportFragmentManager();
     private Challange_me challange_me;
+    private Articles articles;
+    private Shop shop;
     private Button lButton;
     private ImageButton shopButton, articleButton, testimonialButton;
     private View curContent, navBar;
@@ -55,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.navigation_home:
                     //mTextMessage.setText(R.string.title_home);
                     //startActivity(new Intent(MainActivity.this, More.class));
+                    ((TextView)findViewById(R.id.menuScore)).setText("Score: " + test.getCash());
+                    ((TextView)findViewById(R.id.shopScore)).setText("Score: " + test.getCash());
                     changeContent(findViewById(R.id.more));
                     return true;
                 case R.id.navigation_dashboard:
@@ -103,6 +107,15 @@ public class MainActivity extends AppCompatActivity {
         return button;
     }
 
+    private View.OnClickListener articleListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            changeContent(findViewById(R.id.article));
+            articles.init();
+        }
+    };
+
+
     private void changeContent(View view){
         curContent.setVisibility(View.INVISIBLE);
         view.setVisibility(View.VISIBLE);
@@ -119,6 +132,7 @@ public class MainActivity extends AppCompatActivity {
         ((CompoundButton)findViewById(R.id.PUs)).setChecked(test.getPUs());
         ((CompoundButton)findViewById(R.id.Ws)).setChecked(test.getWs());
         ((CompoundButton)findViewById(R.id.Rs)).setChecked(test.getRs());
+
     }
 
     private View.OnClickListener profListener = new View.OnClickListener() {
@@ -132,6 +146,7 @@ public class MainActivity extends AppCompatActivity {
             test.setPUs(((CompoundButton)findViewById(R.id.PUs)).isChecked());
             test.setWs(((CompoundButton)findViewById(R.id.Ws)).isChecked());
             test.setRs(((CompoundButton)findViewById(R.id.Rs)).isChecked());
+            Toast toast = Toast.makeText(getApplicationContext(),"Saved! go do a challenge!", Toast.LENGTH_SHORT); toast.show();
 
         }
     };
@@ -151,8 +166,11 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.login).setVisibility(View.VISIBLE);
         curContent = findViewById(R.id.login);
         challange_me = (Challange_me) fm.findFragmentById(R.id.challange);
+        shop = (Shop) fm.findFragmentById(R.id.shop);
+        articles = (Articles) fm.findFragmentById(R.id.article);
         navBar = findViewById(R.id.navBar);
         navBar.setVisibility(View.INVISIBLE);
+        articles.init();
 
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
@@ -161,9 +179,10 @@ public class MainActivity extends AppCompatActivity {
 
         lButton = findViewById(R.id.LButton);
         lButton.setOnClickListener(lListener);
+        findViewById(R.id.articleButton).setOnClickListener(articleListener);
         shopButton = makeMoreButton(findViewById(R.id.shop), (ImageButton) findViewById(R.id.shopButton));
-        articleButton = makeMoreButton(findViewById(R.id.article), (ImageButton) findViewById(R.id.articleButton));
         testimonialButton = makeMoreButton(findViewById(R.id.testimonial), (ImageButton) findViewById(R.id.testimonialButton));
+        shop.setUpShop();
         findViewById(R.id.cButton).setOnClickListener(cListener);
         findViewById(R.id.subProfile).setOnClickListener(profListener);
 
