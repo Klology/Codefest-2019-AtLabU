@@ -22,6 +22,8 @@ public class Challange_me extends Fragment {
     private static final long WARNING_TIME_LENGTH = 6000;
     private RelativeLayout FirstRun;
     private RelativeLayout SecondRun;
+    private RelativeLayout mPostQuesRW;
+    private RelativeLayout mPostQuesMAT;
     private TextView mTextViewCountDownPRIMARY;
     private TextView mTextViewCountDownWARNING;
     private CountDownTimer Running1;
@@ -30,6 +32,8 @@ public class Challange_me extends Fragment {
     private Button buttonHolder;
     private long mTimeLeftInMillis;
     private long mTimeLeftForWarning;
+
+
 
     ArrayList<String> Exers = new ArrayList<>();
     ArrayList<String> Brai = new ArrayList<>();
@@ -56,6 +60,8 @@ public class Challange_me extends Fragment {
         buttonHolder = getView().findViewById(R.id.cButton);
         FirstRun = getView().findViewById(R.id.SecondPanel);
         SecondRun = getView().findViewById(R.id.INITIALCOUNTDOWN);
+        mPostQuesRW = getView().findViewById(R.id.Reading_Workout_Answer);
+        mPostQuesMAT = getView().findViewById(R.id.MAT_ANSWER);
         mTimeLeftForWarning = WARNING_TIME_LENGTH;
         mTimeLeftInMillis = CHALLENGE_TIME_LENGTH;
 
@@ -142,7 +148,15 @@ public class Challange_me extends Fragment {
                 SecondRun.setVisibility(View.INVISIBLE);
                 clock();
                 cancel();
-
+                int isMath = 1;
+                if(isMath ==0) {
+                    buttonHolder.setVisibility(View.INVISIBLE);
+                    mPostQuesRW.setVisibility(View.VISIBLE);
+                }
+                else{
+                    buttonHolder.setVisibility(View.INVISIBLE);
+                    mPostQuesMAT.setVisibility(View.VISIBLE);
+                }
 
             }
         }.start();
