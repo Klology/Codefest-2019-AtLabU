@@ -1,5 +1,7 @@
 package com.example.atlabu;
 
+import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -10,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 
 import android.widget.CompoundButton;
+import android.widget.ImageButton;
 import android.widget.Switch;
 import android.widget.Toast;
 
@@ -23,6 +26,7 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
 
     private Button lButton;
+    private ImageButton shopButton, articleButton, testimonialButton;
     private View curContent;
     private boolean SitingUp=false, PushingUp=false, Squating=false, Planking=false;
     private boolean Watering=false, Sleeping=false;
@@ -64,9 +68,20 @@ public class MainActivity extends AppCompatActivity {
             EditText edit = findViewById(R.id.userNameSub);
             TextView text = findViewById(R.id.userNameDis);
             text.setText(edit.getText());
-
         }
     };
+
+    private ImageButton makeMoreButton(final View view, ImageButton button){
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                changeContent(view);
+            }
+        });
+
+        return button;
+    }
 
     private void changeContent(View view){
         curContent.setVisibility(View.INVISIBLE);
@@ -79,6 +94,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        findViewById(R.id.shop).setVisibility(View.INVISIBLE);
+        findViewById(R.id.testimonial).setVisibility(View.INVISIBLE);
+        findViewById(R.id.article).setVisibility(View.INVISIBLE);
+        findViewById(R.id.login).setVisibility(View.VISIBLE);
         findViewById(R.id.more).setVisibility(View.INVISIBLE);
         findViewById(R.id.challange).setVisibility(View.INVISIBLE);
         findViewById(R.id.profile).setVisibility(View.INVISIBLE);
@@ -88,8 +107,13 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
+
         lButton = findViewById(R.id.LButton);
         lButton.setOnClickListener(lListener);
+        shopButton = makeMoreButton(findViewById(R.id.shop), (ImageButton) findViewById(R.id.shopButton));
+        articleButton = makeMoreButton(findViewById(R.id.article), (ImageButton) findViewById(R.id.articleButton));
+        testimonialButton = makeMoreButton(findViewById(R.id.testimonial), (ImageButton) findViewById(R.id.testimonialButton));
+
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////

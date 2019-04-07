@@ -10,9 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".Shop"
-            android:label="@string/title_activity_shop" />
-        <activity
             android:name=".Feedback"
             android:label="@string/title_activity_feedback" />
         <activity
