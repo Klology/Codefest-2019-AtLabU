@@ -1,5 +1,7 @@
 package com.example.atlabu;
 
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.annotation.NonNull;
@@ -7,6 +9,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.RelativeLayout;
@@ -157,7 +160,51 @@ public class Challange_me extends Fragment {
     }
 
     private void doMath(){
+        isMath = true;
 
+        String mathsing = "";
+        int mNum1 = r.nextInt(10);
+        int mNum2 = r.nextInt(10);
+
+        switch(r.nextInt(3)){
+            case 0:
+                mathsing = " " + mNum1 + " + " + mNum2 +" ";
+                Question.setText(mathsing);
+                answer = mNum1 + mNum2;
+                break;
+            case 1:
+                mathsing = " " + mNum1 + " - " + mNum2 +" ";
+                Question.setText(mathsing);
+                answer = mNum1 - mNum2;
+                break;
+            case 2:
+                mathsing = " " + mNum1 + " X " + mNum2 +" ";
+                Question.setText(mathsing);
+                answer = mNum1 * mNum2;
+                break;
+        }
+
+        mPostQuesMAT.setVisibility(View.VISIBLE);
+        submit = getView().findViewById(R.id.SubMath);
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String input = ((EditText)getView().findViewById(R.id.mathInput)).getText().toString();
+                if ("".equals(input)){
+                    Toast toast = Toast.makeText(getContext(),"Incorrect!", Toast.LENGTH_SHORT);
+                    toast.show();
+
+                } else if (answer == Integer.parseInt(input)) {
+                    test.mutCash(50);
+                    Question.setText("Correct!");
+                    Question.setTextColor(Color.GREEN);
+                } else {
+                    Toast toast = Toast.makeText(getContext(), "Incorrect!", Toast.LENGTH_SHORT);
+                    toast.show();
+                }
+
+            }
+        });
     }
 
     private void getChallenge(){
@@ -175,18 +222,22 @@ public class Challange_me extends Fragment {
                 }
             case 2:
                 if(brain){
-                    switch (r.nextInt(2)){
-                        case 0:
-                            if(test.getRs()){
-                                doRead();
-                                break;
-                            }
 
-                        default:
-                            doMath();
-
+                    if(!test.getMs()){
+                        doRead();
+                        break;
+                    } else {
+                        switch (r.nextInt(2)) {
+                            case 0:
+                                if (test.getRs()) {
+                                    doRead();
+                                    break;
+                                }
+                            default:
+                                doMath();
+                        }
+                        break;
                     }
-                    break;
                 }
             default:
                 getChallenge();
@@ -231,72 +282,40 @@ public class Challange_me extends Fragment {
             @Override
             public void onFinish() {
                 SecondRun.setVisibility(View.INVISIBLE);
-                cancel();
 
-                mPostQuesRW.setVisibility(View.VISIBLE);
-                /*
-                if(isMath) {
-                    buttonHolder.setVisibility(View.INVISIBLE);
+
+                if(!isMath){
+                    SecondRun.setVisibility(View.INVISIBLE);
                     mPostQuesRW.setVisibility(View.VISIBLE);
-                    Question.setVisibility(View.VISIBLE);
-
-                    String mathsing = "";
-                    int mMutNum = r.nextInt(4);
-                    int mNum1 = r.nextInt(100);
-                    int mNum2 = r.nextInt(100);
-
-                    switch(mMutNum){
-                        case 1:
-                            mathsing = " " + mNum1 + " + " + mNum2 +" ";
-                            Question.setText(mathsing);
-                            answer = mNum1 + mNum2;
-                            break;
-                        case 2:
-                            mathsing = " " + mNum1 + " - " + mNum2 +" ";
-                            Question.setText(mathsing);
-                            answer = mNum1 - mNum2;
-                            break;
-                        case 3:
-                            mathsing = " " + mNum1 + " X " + mNum2 +" ";
-                            Question.setText(mathsing);
-                            answer = mNum1 * mNum2;
-                            break;
-                        case 4:
-                            mathsing = " " + mNum1 + " / " + mNum2 +" ";
-                            Question.setText(mathsing);
-                            answer = mNum1 / mNum2;
-                            break;
-                        default:
-                            break;
-                    }
-
-
-                    //Question.setText( );
-
-                    submit = getView().findViewById(R.id.SubMath);
+                    submit = getView().findViewById(R.id.subYes);
                     submit.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            String thing = answer + "";
-                            String thing2 = Question.getText() + "";
-                            if( thing == thing2){
-                                test.mutCash(50);
-                            }
+                            test.mutCash(50);
+                            mPostQuesRW.setVisibility(View.INVISIBLE);
+                            buttonHolder.setVisibility(View.VISIBLE);
+                            navBar.setVisibility(View.VISIBLE);
+
                         }
                     });
+                    getView().findViewById(R.id.subNo).setOnClickListener(new View.OnClickListener(){
+                        @Override
+                        public void onClick(View v) {
+                            mPostQuesRW.setVisibility(View.INVISIBLE);
+                            buttonHolder.setVisibility(View.VISIBLE);
+                            navBar.setVisibility(View.VISIBLE);
+                        }
+                    });
+                } else {
+
+                    Question.setTextColor(Color.BLACK);
+                    ((EditText)getView().findViewById(R.id.mathInput)).setText("");
+                    mPostQuesMAT.setVisibility(View.INVISIBLE);
+                    buttonHolder.setVisibility(View.VISIBLE);
+                    navBar.setVisibility(View.VISIBLE);
                 }
-                */
 
-                submit = getView().findViewById(R.id.subYes);
-                submit.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        mPostQuesRW.setVisibility(View.INVISIBLE);
-                        buttonHolder.setVisibility(View.VISIBLE);
-                        navBar.setVisibility(View.VISIBLE);
-                    }
-                });
-
+                cancel();
             }
         }.start();
         updateCountDownText();
