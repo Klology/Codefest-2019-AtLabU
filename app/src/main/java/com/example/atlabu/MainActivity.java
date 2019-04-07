@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
     private FragmentManager fm = getSupportFragmentManager();
     private Challange_me challange_me;
+    private Articles articles;
     private Shop shop;
     private Button lButton;
     private ImageButton shopButton, articleButton, testimonialButton;
@@ -106,6 +107,15 @@ public class MainActivity extends AppCompatActivity {
         return button;
     }
 
+    private View.OnClickListener articleListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            changeContent(findViewById(R.id.article));
+            articles.init();
+        }
+    };
+
+
     private void changeContent(View view){
         curContent.setVisibility(View.INVISIBLE);
         view.setVisibility(View.VISIBLE);
@@ -155,8 +165,10 @@ public class MainActivity extends AppCompatActivity {
         curContent = findViewById(R.id.login);
         challange_me = (Challange_me) fm.findFragmentById(R.id.challange);
         shop = (Shop) fm.findFragmentById(R.id.shop);
+        articles = (Articles) fm.findFragmentById(R.id.article);
         navBar = findViewById(R.id.navBar);
         navBar.setVisibility(View.INVISIBLE);
+        articles.init();
 
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
@@ -165,8 +177,8 @@ public class MainActivity extends AppCompatActivity {
 
         lButton = findViewById(R.id.LButton);
         lButton.setOnClickListener(lListener);
+        findViewById(R.id.articleButton).setOnClickListener(articleListener);
         shopButton = makeMoreButton(findViewById(R.id.shop), (ImageButton) findViewById(R.id.shopButton));
-        articleButton = makeMoreButton(findViewById(R.id.article), (ImageButton) findViewById(R.id.articleButton));
         testimonialButton = makeMoreButton(findViewById(R.id.testimonial), (ImageButton) findViewById(R.id.testimonialButton));
         shop.setUpShop();
         findViewById(R.id.cButton).setOnClickListener(cListener);
