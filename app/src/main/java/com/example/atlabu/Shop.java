@@ -32,7 +32,7 @@ public class Shop extends Fragment {
         getView().findViewById(R.id.coupon_button).setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                if(test.getCash() > 5) {
+                if(test.getCash() >= 5) {
                     test.mutCash(getContext(),-5);
                     ((TextView)getView().findViewById(R.id.coupon_button)).setText("Code: 84790CHE");
                 }
@@ -46,7 +46,7 @@ public class Shop extends Fragment {
         getView().findViewById(R.id.coupon_button2).setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                if(test.getCash() > 10) {
+                if(test.getCash() >= 10) {
                     test.mutCash(getContext(),-10);
                     ((TextView)getView().findViewById(R.id.coupon_button2)).setText("Code: 73917DIO");
                 }
@@ -60,7 +60,7 @@ public class Shop extends Fragment {
         getView().findViewById(R.id.coupon_button3).setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                if(test.getCash() > 15) {
+                if(test.getCash() >= 15) {
                     test.mutCash(getContext(),-15);
                     ((TextView)getView().findViewById(R.id.coupon_button3)).setText("Code: 05248BNK");
                 }
