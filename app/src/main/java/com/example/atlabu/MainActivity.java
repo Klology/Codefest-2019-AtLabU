@@ -1,17 +1,23 @@
 package com.example.atlabu;
 
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.AssetManager;
 import android.media.Image;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.NotificationManagerCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
@@ -123,6 +129,7 @@ public class MainActivity extends AppCompatActivity {
         curContent = view;
     }
 
+
     private void setProfile(){
         ((CompoundButton)findViewById(R.id.Ms)).setChecked(test.getMs());
         ((CompoundButton)findViewById(R.id.SleepS)).setChecked(test.getSLEs());
@@ -147,6 +154,7 @@ public class MainActivity extends AppCompatActivity {
             test.setWs(((CompoundButton)findViewById(R.id.Ws)).isChecked());
             test.setRs(((CompoundButton)findViewById(R.id.Rs)).isChecked());
             Toast toast = Toast.makeText(getApplicationContext(),"Saved! go do a challenge!", Toast.LENGTH_SHORT); toast.show();
+            doNotif("try");
 
         }
     };
@@ -170,6 +178,7 @@ public class MainActivity extends AppCompatActivity {
         articles = (Articles) fm.findFragmentById(R.id.article);
         navBar = findViewById(R.id.navBar);
         navBar.setVisibility(View.INVISIBLE);
+        doNotif("try");
         articles.init();
 
 
@@ -188,6 +197,49 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+    public void doNotif(String title){
+        //int check =0;
+
+        /*NotificationManager notif = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
+
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "20")
+                .setSmallIcon(R.drawable.thewiz3)
+                .setContentTitle("Challenge available")
+                .setContentText(title)
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+        builder.build();*/
+        //NotificationManager notif = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
+        if(Build.VERSION.SDK_INT >= 26)
+        {
+            NotificationManager notif = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
+            if(notif.getNotificationChannel("Notif_channel") == null)
+            {
+                CharSequence channel_name = "notif_ch_name";
+                String description = "This is the channel for the notifications.";
+                NotificationChannel channel = new NotificationChannel("Notif_channel", channel_name, NotificationManager.IMPORTANCE_HIGH);
+                channel.setDescription(description);
+                notif.createNotificationChannel(channel);
+            }
+        }
+        NotificationManagerCompat compat_manager = NotificationManagerCompat.from(getApplicationContext());
+
+
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(MainActivity.this, "Notif_channel");
+
+                builder.setContentTitle("You Have A Challenge")
+                .setContentText("The Challenge is a" + title +"Challenge ")
+                .setContentTitle("this3")
+                .setSmallIcon(R.drawable.thewiz2);
+
+                Notification notification = builder.build();
+        //notify.flags |= Notification.FLAG_AUTO_CANCEL;
+        compat_manager.notify((int)SystemClock.currentThreadTimeMillis(), notification);
+
+
+        //return check;
+    }
+
+
 
 
 }
