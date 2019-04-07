@@ -55,6 +55,8 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.navigation_home:
                     //mTextMessage.setText(R.string.title_home);
                     //startActivity(new Intent(MainActivity.this, More.class));
+                    ((TextView)findViewById(R.id.menuScore)).setText("Score: " + test.getCash());
+                    ((TextView)findViewById(R.id.shopScore)).setText("Score: " + test.getCash());
                     changeContent(findViewById(R.id.more));
                     return true;
                 case R.id.navigation_dashboard:

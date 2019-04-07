@@ -195,7 +195,7 @@ public class Challange_me extends Fragment {
                     toast.show();
 
                 } else if (answer == Integer.parseInt(input)) {
-                    test.mutCash(50);
+                    test.mutCash(getContext(),50);
                     Question.setText("Correct!");
                     Question.setTextColor(Color.GREEN);
                 } else {
@@ -291,7 +291,7 @@ public class Challange_me extends Fragment {
                     submit.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            test.mutCash(50);
+                            test.mutCash(getContext(),50);
                             mPostQuesRW.setVisibility(View.INVISIBLE);
                             buttonHolder.setVisibility(View.VISIBLE);
                             navBar.setVisibility(View.VISIBLE);
