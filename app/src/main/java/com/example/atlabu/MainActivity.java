@@ -122,6 +122,7 @@ public class MainActivity extends AppCompatActivity {
         ((CompoundButton)findViewById(R.id.PUs)).setChecked(test.getPUs());
         ((CompoundButton)findViewById(R.id.Ws)).setChecked(test.getWs());
         ((CompoundButton)findViewById(R.id.Rs)).setChecked(test.getRs());
+
     }
 
     private View.OnClickListener profListener = new View.OnClickListener() {
@@ -135,6 +136,7 @@ public class MainActivity extends AppCompatActivity {
             test.setPUs(((CompoundButton)findViewById(R.id.PUs)).isChecked());
             test.setWs(((CompoundButton)findViewById(R.id.Ws)).isChecked());
             test.setRs(((CompoundButton)findViewById(R.id.Rs)).isChecked());
+            Toast toast = Toast.makeText(getApplicationContext(),"Saved! go do a challenge!", Toast.LENGTH_SHORT); toast.show();
 
         }
     };
