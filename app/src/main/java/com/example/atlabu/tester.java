@@ -1,6 +1,7 @@
 package com.example.atlabu;
 
 import android.content.Context;
+import android.support.v4.app.NotificationCompat;
 import android.widget.Toast;
 
 class tester {
@@ -76,5 +77,6 @@ class tester {
     public boolean getMs(){
         return Ms;
     }
+
 
 }
