@@ -52,4 +52,31 @@
         app:layout_constraintBottom_toBottomOf="parent"
         tools:layout_editor_absoluteX="31dp" />
 
+    <fragment
+        android:id="@+id/shop"
+        android:name="com.example.atlabu.Shop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="31dp" />
+
+    <fragment
+        android:id="@+id/article"
+        android:name="com.example.atlabu.Articles"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="31dp" />
+
+    <fragment
+        android:id="@+id/testimonial"
+        android:name="com.example.atlabu.Testenomials"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="31dp" />
+
 </android.support.constraint.ConstraintLayout>
