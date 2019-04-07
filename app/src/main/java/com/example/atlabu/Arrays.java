@@ -18,13 +18,38 @@ public class Arrays {
     exerciseList.add("Perform as many sit-ups as you can.");
     exerciseList.add("Perform as many squats as you can.");
     exerciseList.add("Perform a one minute plank.");
+
         return exerciseList;
     }
 
     public static ArrayList<String> getBrain(){
         ArrayList<String> brainList = new ArrayList<>();
-        brainList.add("Solve a math problem.");
-        brainList.add("Match a vocabulary definition.");
+        brainList.add("Read This:\n" +
+                "In a perfect world, you’d be able to make decisions on your own. However, that’s " +
+                "not always possible as you may find yourself in a group that is responsible for making " +
+                "decisions for your organization, such as a team or committee. When that happens, it’s " +
+                "important to limit the number of people to a realistic and efficient number of decision-makers.");
+        brainList.add("Read This:\n" +
+                "Almost nothing can make the responsibility of decision-making even more challenging. " +
+                "However, if you have the wrong person in one of the integral roles within the decision-making " +
+                "process, that could certainly make things more difficult for everyone involved.");
+        brainList.add("Read This:\n" +
+                "Solving problems and making decisions in a constantly-changing professional environment " +
+                "can present a number of challenges. So, when you have individual employees or groups in " +
+                "place to face those challenges, you need to make sure they are prepared to do so as much as possible.");
+        brainList.add("Read This:\n" +
+                "Although this may sound ridiculously simple, following a decision-making checklist when faced with " +
+                "a business decision can save you time and increase results. By following this checklist (and not " +
+                "simply understanding the list items), you can work to counteract a range of cognitive biases and" +
+                " mental shortcuts that can hinder our decision-making processes.");
+        brainList.add("Read This:\n" +
+                "When things are looking up and everything is going well, it’s easy to become complacent " +
+                "or to overlook potential concerns with the expectation that everything will remain stable " +
+                "and that no calamities will arise. This is when it’s most important to instill a culture " +
+                "of humility within your organization and to encourage decision-makers to review the history " +
+                "of their organization and industry.");
+        //brainList.add("Solve a math problem.");
+        //brainList.add("Match a vocabulary definition.");
         return brainList;
     }
 
