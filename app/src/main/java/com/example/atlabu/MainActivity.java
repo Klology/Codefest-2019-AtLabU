@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,16 +19,18 @@ import android.widget.Toast;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.Random;
+
 
 public class MainActivity extends AppCompatActivity {
 
-    private FragmentManager fm = getSupportFragmentManager();
     private Button lButton;
     private ImageButton shopButton, articleButton, testimonialButton;
     private View curContent;
-    private boolean SitUp=false, PushUp=false, Squat=false, Planking=false;
-    private boolean Water=false, Sleep=false;
-    private Challange_me challange_me;
+    private boolean SitingUp=false, PushingUp=false, Squating=false, Planking=false;
+    private boolean Watering=false, Sleeping=false;
+
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -47,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
                     //mTextMessage.setText(R.string.title_dashboard);
                     //startActivity(new Intent(MainActivity.this, Challange_me.class));
                     changeContent(findViewById(R.id.challange));
-
                     return true;
                 case R.id.navigation_notifications:
                     //mTextMessage.setText(R.string.title_notifications);
@@ -59,8 +59,6 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
-
-
     private View.OnClickListener lListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -68,13 +66,6 @@ public class MainActivity extends AppCompatActivity {
             EditText edit = findViewById(R.id.userNameSub);
             TextView text = findViewById(R.id.userNameDis);
             text.setText(edit.getText());
-        }
-    };
-
-    private View.OnClickListener cListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            challange_me.clock(findViewById(R.id.navBar));
         }
     };
 
@@ -120,20 +111,19 @@ public class MainActivity extends AppCompatActivity {
         shopButton = makeMoreButton(findViewById(R.id.shop), (ImageButton) findViewById(R.id.shopButton));
         articleButton = makeMoreButton(findViewById(R.id.article), (ImageButton) findViewById(R.id.articleButton));
         testimonialButton = makeMoreButton(findViewById(R.id.testimonial), (ImageButton) findViewById(R.id.testimonialButton));
-        challange_me = (Challange_me)fm.findFragmentById(R.id.challange);
-        findViewById(R.id.cButton).setOnClickListener(cListener);
 
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-        Switch PushUp = findViewById(R.id.PUs);
+        final Switch PushUp = findViewById(R.id.PUs);
         PushUp.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked){
                     Toast toast = Toast.makeText(getApplicationContext(), "Push-Ups ON!", Toast.LENGTH_SHORT); toast.show();
-
+                    PushingUp=true;
                 }else{
                     Toast toast = Toast.makeText(getApplicationContext(), "Push-ups OFF", Toast.LENGTH_SHORT); toast.show();
+                    PushingUp=false;
                 }
 
                 //Toast toast = Toast.makeText(getApplicationContext(), "This is a message displayed in a Toast", Toast.LENGTH_SHORT); toast.show();
@@ -144,9 +134,10 @@ public class MainActivity extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked){
                     Toast toast = Toast.makeText(getApplicationContext(), "Sit-Ups ON!", Toast.LENGTH_SHORT); toast.show();
-
+                    SitingUp=true;
                 }else{
                     Toast toast = Toast.makeText(getApplicationContext(), "Sit-ups OFF", Toast.LENGTH_SHORT); toast.show();
+                    SitingUp=false;
                 }            }
         });
         Switch Squ = findViewById(R.id.Ss);
@@ -154,9 +145,10 @@ public class MainActivity extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked){
                     Toast toast = Toast.makeText(getApplicationContext(), "Squats ON!", Toast.LENGTH_SHORT); toast.show();
-
+                    Squating=true;
                 }else{
                     Toast toast = Toast.makeText(getApplicationContext(), "Squats OFF", Toast.LENGTH_SHORT); toast.show();
+                    Squating=false;
                 }            }
         });
         Switch plank = findViewById(R.id.Ps);
@@ -164,9 +156,11 @@ public class MainActivity extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked){
                     Toast toast = Toast.makeText(getApplicationContext(), "Plank ON!", Toast.LENGTH_SHORT); toast.show();
+                    Planking=true;
 
                 }else{
                     Toast toast = Toast.makeText(getApplicationContext(), "Plank OFF", Toast.LENGTH_SHORT); toast.show();
+                    Planking=false;
                 }            }
         });
         Switch Water = findViewById(R.id.Ws);
@@ -174,22 +168,42 @@ public class MainActivity extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked){
                     Toast toast = Toast.makeText(getApplicationContext(), "Water ON!", Toast.LENGTH_SHORT); toast.show();
-
+                    Watering=true;
                 }else{
                     Toast toast = Toast.makeText(getApplicationContext(), "Water OFF", Toast.LENGTH_SHORT); toast.show();
+                    Watering=false;
                 }            }
         });
         Switch Sleep = findViewById(R.id.SleepS);
         Sleep.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked){
-                    Toast toast = Toast.makeText(getApplicationContext(), "Sleep ON!", Toast.LENGTH_SHORT); toast.show();
+                    //Toast toast = Toast.makeText(getApplicationContext(), "Sleep ON!", Toast.LENGTH_SHORT); toast.show();
+                    Sleeping=true;
+
+                    if(Sleeping) {
+
+                    }
+
 
                 }else{
                     Toast toast = Toast.makeText(getApplicationContext(), "Sleep OFF", Toast.LENGTH_SHORT); toast.show();
+                    Sleeping=false;
                 }            }
         });
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+    //new section
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+         //boolean polder = true;
+
+
+
     }
+
+
+
+
     ////////////////////////////////////////////////////////////////////////////////////////////////
     public void changeV(){
 
