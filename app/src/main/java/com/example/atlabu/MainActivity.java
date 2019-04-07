@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,11 +23,13 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    private FragmentManager fm = getSupportFragmentManager();
     private Button lButton;
     private ImageButton shopButton, articleButton, testimonialButton;
     private View curContent;
     private boolean SitUp=false, PushUp=false, Squat=false, Planking=false;
     private boolean Water=false, Sleep=false;
+    private Challange_me challange_me;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -44,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
                     //mTextMessage.setText(R.string.title_dashboard);
                     //startActivity(new Intent(MainActivity.this, Challange_me.class));
                     changeContent(findViewById(R.id.challange));
+
                     return true;
                 case R.id.navigation_notifications:
                     //mTextMessage.setText(R.string.title_notifications);
@@ -55,6 +59,8 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
+
+
     private View.OnClickListener lListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -62,6 +68,13 @@ public class MainActivity extends AppCompatActivity {
             EditText edit = findViewById(R.id.userNameSub);
             TextView text = findViewById(R.id.userNameDis);
             text.setText(edit.getText());
+        }
+    };
+
+    private View.OnClickListener cListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            challange_me.clock(findViewById(R.id.navBar));
         }
     };
 
@@ -107,6 +120,8 @@ public class MainActivity extends AppCompatActivity {
         shopButton = makeMoreButton(findViewById(R.id.shop), (ImageButton) findViewById(R.id.shopButton));
         articleButton = makeMoreButton(findViewById(R.id.article), (ImageButton) findViewById(R.id.articleButton));
         testimonialButton = makeMoreButton(findViewById(R.id.testimonial), (ImageButton) findViewById(R.id.testimonialButton));
+        challange_me = (Challange_me)fm.findFragmentById(R.id.challange);
+        findViewById(R.id.cButton).setOnClickListener(cListener);
 
 
 
