@@ -3,6 +3,7 @@ package com.example.atlabu;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -154,7 +155,7 @@ public class MainActivity extends AppCompatActivity {
             test.setWs(((CompoundButton)findViewById(R.id.Ws)).isChecked());
             test.setRs(((CompoundButton)findViewById(R.id.Rs)).isChecked());
             Toast toast = Toast.makeText(getApplicationContext(),"Saved! go do a challenge!", Toast.LENGTH_SHORT); toast.show();
-            doNotif("try");
+            //doNotif("try");
 
         }
     };
@@ -178,7 +179,8 @@ public class MainActivity extends AppCompatActivity {
         articles = (Articles) fm.findFragmentById(R.id.article);
         navBar = findViewById(R.id.navBar);
         navBar.setVisibility(View.INVISIBLE);
-        doNotif("try");
+        articles.init();
+
         articles.init();
 
 
@@ -194,6 +196,13 @@ public class MainActivity extends AppCompatActivity {
         shop.setUpShop();
         findViewById(R.id.cButton).setOnClickListener(cListener);
         findViewById(R.id.subProfile).setOnClickListener(profListener);
+
+        //if((int)SystemClock.currentThreadTimeMillis() >= 5){
+            doNotif("A Workout");
+        //}
+
+
+
 
 
     }
@@ -222,14 +231,21 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         NotificationManagerCompat compat_manager = NotificationManagerCompat.from(getApplicationContext());
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
+                | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+// Create the PendingIntent
+        PendingIntent notifyPendingIntent = PendingIntent.getActivity(
+                this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT
+        );
 
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(MainActivity.this, "Notif_channel");
 
                 builder.setContentTitle("You Have A Challenge")
-                .setContentText("The Challenge is a" + title +"Challenge ")
-                .setContentTitle("this3")
-                .setSmallIcon(R.drawable.thewiz2);
+                .setContentText("Time for A Challenge! Click Here!")
+                .setSmallIcon(R.drawable.thewiz2)
+                .setContentIntent(notifyPendingIntent);
 
                 Notification notification = builder.build();
         //notify.flags |= Notification.FLAG_AUTO_CANCEL;

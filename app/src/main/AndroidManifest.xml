@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".NotifChalenge"
+            android:label="@string/title_activity_notif_chalenge"></activity>
+        <activity
             android:name=".Feedback"
             android:label="@string/title_activity_feedback" />
         <activity
