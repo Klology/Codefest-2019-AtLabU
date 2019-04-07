@@ -1,8 +1,12 @@
 package com.example.atlabu;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.AssetManager;
 import android.media.Image;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
@@ -19,8 +23,12 @@ import android.widget.Toast;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.io.FileInputStream;
+import java.io.FileReader;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.prefs.Preferences;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -30,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
     private View curContent;
     private boolean SitingUp=false, PushingUp=false, Squating=false, Planking=false;
     private boolean Watering=false, Sleeping=false;
+
+
+    //SharedPreferences sharedPref = MainActivity.this.getAct().getPreferences(Context.MODE_PRIVATE);
 
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -111,7 +122,13 @@ public class MainActivity extends AppCompatActivity {
         shopButton = makeMoreButton(findViewById(R.id.shop), (ImageButton) findViewById(R.id.shopButton));
         articleButton = makeMoreButton(findViewById(R.id.article), (ImageButton) findViewById(R.id.articleButton));
         testimonialButton = makeMoreButton(findViewById(R.id.testimonial), (ImageButton) findViewById(R.id.testimonialButton));
+        ///////////////////////////////////////////////
+       // SharedPreferences sharedPref = this.getActivity().getPreferences(Context.MODE_PRIVATE);
+        //SharedPreferences.Editor editor = sharedPref.edit();
+        //editor.putInt(false, false, false , 100);
+        //editor.commit();
 
+        //////////////////////////////////////////////
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -157,6 +174,8 @@ public class MainActivity extends AppCompatActivity {
                 if(isChecked){
                     Toast toast = Toast.makeText(getApplicationContext(), "Plank ON!", Toast.LENGTH_SHORT); toast.show();
                     Planking=true;
+                    //thing = Arrays
+
 
                 }else{
                     Toast toast = Toast.makeText(getApplicationContext(), "Plank OFF", Toast.LENGTH_SHORT); toast.show();
@@ -180,11 +199,7 @@ public class MainActivity extends AppCompatActivity {
                 if(isChecked){
                     //Toast toast = Toast.makeText(getApplicationContext(), "Sleep ON!", Toast.LENGTH_SHORT); toast.show();
                     Sleeping=true;
-
-                    if(Sleeping) {
-
-                    }
-
+                    Toast toast = Toast.makeText(getApplicationContext(), "Sleep On!", Toast.LENGTH_SHORT); toast.show();
 
                 }else{
                     Toast toast = Toast.makeText(getApplicationContext(), "Sleep OFF", Toast.LENGTH_SHORT); toast.show();
@@ -195,8 +210,16 @@ public class MainActivity extends AppCompatActivity {
     ////////////////////////////////////////////////////////////////////////////////////////////////
     //new section
     ////////////////////////////////////////////////////////////////////////////////////////////////
-         //boolean polder = true;
 
+        //AssetManager assetManager = getAssets();
+       // InputStream IS = assetManager.open("Pref.txt");
+        tester test = new tester();
+        test.setPUs(PushingUp);
+        test.setSUs(SitingUp);
+        test.setPs(Planking);
+        test.setSs(Squating);
+        test.setWs(Watering);
+        test.setSLEs(Sleeping);
 
 
     }

@@ -6,6 +6,8 @@ public class Arrays {
 
 
     public String username;
+    private boolean SUs=false, PUs=false, Ss=false, Ps=false;
+    private boolean Ws=false, SLEs=false;
 
     /**
      * Exercise menu item array
@@ -61,12 +63,26 @@ public class Arrays {
         return healthList;
     }
 
+    public static void SetPUs(boolean PUs){
 
+    }
     //mutator to accept single string username
     public void setUsername (String username){
         this.username = username;
     }
-    public void setPUs (Boolean PUs){
-   //     PUs =
+    public void setSUs(Boolean SUz){
+        SUs = SUz;
+    }
+    public void setSs(Boolean Sz){
+        Ss = Sz;
+    }
+    public void setPs(Boolean Pz){
+        Ps = Pz;
+    }
+    public void setWs(Boolean Wz){
+        Ws = Wz;
+    }
+    public void setSLEs(Boolean SLEz){
+        SLEs = SLEz;
     }
 }

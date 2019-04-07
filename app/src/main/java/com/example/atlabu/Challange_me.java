@@ -31,6 +31,10 @@ public class Challange_me extends Fragment {
     private long mTimeLeftInMillis;
     private long mTimeLeftForWarning;
 
+    private boolean SitingUp=false, PushingUp=false, Squating=false, Planking=false;
+    private boolean Watering=false, Sleeping=false;
+
+
     ArrayList<String> Exers = new ArrayList<>();
     ArrayList<String> Brai = new ArrayList<>();
     ArrayList<String> Health = new ArrayList<>();
@@ -40,6 +44,7 @@ public class Challange_me extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.activity_challange_me, container, false);
+
     }
 
     @Override
@@ -93,6 +98,14 @@ public class Challange_me extends Fragment {
                 cancel();
                 SecondRun.setVisibility(View.VISIBLE);
                 startTimer2();
+
+                tester test = new tester();
+                test.setPUs(PushingUp);
+                test.setSUs(SitingUp);
+                test.setPs(Planking);
+                test.setSs(Squating);
+                test.setWs(Watering);
+                test.setSLEs(Sleeping);
 
                 Random r = new Random();
                 int i1 = r.nextInt(3 - 0);
