@@ -14,10 +14,10 @@ public class Arrays {
 
     public static ArrayList<String> getExercise(){
     ArrayList<String> exerciseList = new ArrayList<>();
-    exerciseList.add("Sit-Ups- Perform as many push-ups as you can.");
-    exerciseList.add("Perform as many sit-ups as you can.");
-    exerciseList.add("Perform as many squats as you can.");
-    exerciseList.add("Perform a one minute plank.");
+    exerciseList.add("Sit-Ups- Perform as many push-ups as you can in 1 Minute.");
+    exerciseList.add("Perform as many sit-ups as you can in 1 Minute.");
+    exerciseList.add("Perform as many squats as you can in 1 Minute.");
+    exerciseList.add("Perform as much of a one minute plank as you can.");
 
         return exerciseList;
     }
@@ -55,8 +55,9 @@ public class Arrays {
 
     public static ArrayList<String> getHealth(){
         ArrayList<String> healthList = new ArrayList<>();
-        healthList.add("Drink a glass of water.");
-        healthList.add("Go to bed on time.");
+        healthList.add("Did you Drink Enough Today?");
+        healthList.add("Did You Get Enough Sleep?");
+        healthList.add("Were you successful today?");
         return healthList;
     }
 
